@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="css/estilos.css">
+    <link rel="stylesheet" href="css/fontawesome-all.min.css">
+    <link rel="icon" href="img/logo.ico">
+</head>
+<body>
+ <form class="formulario" action="MODULOS/registro/validar_registro.php" method="POST">
+    
+    <h1>Registrate</h1>
+     <div class="contenedor">
+     
+     <div class="input-contenedor">
+       <i class="fas fa-user icon"></i>
+       <input type="text" placeholder="Nombre Completo" name="name">
+       
+      </div>
+      <div class="input-contenedor">
+        <i class="far fa-user-circle icon"></i>
+          <input type="text" placeholder="Usuario" name="user">
+          
+          </div>
+          <div class="input-contenedor">
+            <i class="fas fa-mobile-alt icon"></i>
+            <input type="text" placeholder="Número de télefono" name="tel">
+            
+            </div>
+         <div class="input-contenedor">
+         <i class="fas fa-envelope icon"></i>
+         <input type="text" placeholder="Correo Electronico" name="email">
+         
+         </div>
+         
+         <div class="input-contenedor">
+        <i class="fas fa-key icon"></i>
+         <input type="password" placeholder="Contraseña" name="password">
+         
+         </div>
+         <input type="submit" value="Registrate" class="button" name="submit">
+         <p>Al registrarte, aceptas nuestras Condiciones de uso y Política de privacidad.</p>
+         <p>¿Ya tienes una cuenta?<a class="link" href="loginview.html"> Iniciar Sesion</a></p>
+     </div>
+    </form>
+</body>
+</html>
