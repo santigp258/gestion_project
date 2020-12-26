@@ -16,13 +16,13 @@
       <img src="../img/logo.png" alt="logo" class="logo">
       <h1 class="title">Iniciar Sesión</h1>
       <form action="./sendData.php" method="POST">
-        <label for="">Email</label>
-        <input type="email">
-        <label for="">Contraseña</label>
-        <input type="password">
-        <input type="submit" value="Iniciar">
+        <label for="usernameEmail">Email</label>
+        <input type="text" id="usernameEmail" name="usernameEmail">
+        <label for="password">Contraseña</label>
+        <input type="password" name="password">
+        <input type="submit" value="Iniciar" name="loginSubmit">
       </form>
-      <span class="text-footer">¿Aún no te has registrado?<a href="registerview.php">Registrate</a></span>
+      <span class="text-footer">¿Aún no te has registrado?<a href="registerview.php"> Registrate</a></span>
     </div>
     <!-- Lado Derecho -->
     <div class="ctn-text">
