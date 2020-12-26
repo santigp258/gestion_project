@@ -15,7 +15,7 @@
     <div class="ctn-form">
       <img src="../img/logo.png" alt="logo" class="logo">
       <h1 class="title">Iniciar Sesión</h1>
-      <form action="./sendData.php" method="POST">
+      <form action="./sendData.php" method="POST" name="login">
         <label for="usernameEmail">Email</label>
         <input type="text" id="usernameEmail" name="usernameEmail">
         <label for="password">Contraseña</label>
