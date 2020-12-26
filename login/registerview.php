@@ -26,7 +26,7 @@
         <input type="password" name="passwordReg" id="passwordReg">
         <input type="submit" value="Registrarse" name="signupSubmit">
       </form>
-      <span class="text-footer">¿Ya te has registrado?<a href="loginview.php">Iniciar Sesión</a></span>
+      <span class="text-footer">¿Ya te has registrado?<a href="loginview.php"> Iniciar Sesión</a></span>
     </div>
     <!-- Lado Derecho -->
     <div class="ctn-text">
