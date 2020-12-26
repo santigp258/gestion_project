@@ -2,10 +2,10 @@
 session_start();
 /* DATABASE CONFIGURATION */
 define('DB_SERVER', 'localhost');
-define('DB_USERNAME', 'username');
-define('DB_PASSWORD', 'password');
-define('DB_DATABASE', 'databasename');
-define("BASE_URL", "localhost"); // Eg. http://yourwebsite.com
+define('DB_USERNAME', 'root');
+define('DB_PASSWORD', '');
+define('DB_DATABASE', 'gestion');
+define("BASE_URL", "http://localhost/proyect/"); // Eg. http://yourwebsite.com
 
 
 function getDB() 

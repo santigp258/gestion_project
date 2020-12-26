@@ -25,7 +25,8 @@ h1{
     font-size: 40px;
 }
 input[type="text"],
-input[type="password"]{
+input[type="password"],
+input[type="email"]{
     font-size: 20px;
     width: 82%;
     padding: 10px;
@@ -85,7 +86,8 @@ p{
         font-size: 40px;
     }
     input[type="text"],
-    input[type="password"]{
+    input[type="password"],
+    input[type="email"]{
         font-size: 20px;
         width: 82%;
         padding: 10px;
@@ -109,7 +111,8 @@ p{
         margin-top: 50px;
     }
     input[type="text"],
-    input[type="password"]{
+    input[type="password"],
+    input[type="email"]{
     font-size: 15px;
     width: 80%;
     border: none;
@@ -146,7 +149,8 @@ p{
         font-size: 40px;
     }
     input[type="text"],
-    input[type="password"]{
+    input[type="password"],
+    input[type="email"]{
         font-size: 20px;
         width: 100%;
         padding: 10px;

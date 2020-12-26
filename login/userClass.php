@@ -2,34 +2,32 @@
 
 class userClass
 {
-    /* User login */
+    /* User Login */
     public function userLogin($usernameEmail, $password)
     {
         try {
             $db = getDB();
-            $hash_password = hash('sha256', $password); //encryption
-            $stmt = $db->prepare("SELECT uid FROM users WHERE (username=:usernameEmail or email=:usernameEmail AND password=:hash_password)");
+            $hash_password = hash('sha256', $password); //Password encryption 
+            $stmt = $db->prepare("SELECT uid FROM users WHERE (username=:usernameEmail or email=:usernameEmail) AND password=:hash_password");
             $stmt->bindParam("usernameEmail", $usernameEmail, PDO::PARAM_STR);
             $stmt->bindParam("hash_password", $hash_password, PDO::PARAM_STR);
             $stmt->execute();
             $count = $stmt->rowCount();
             $data = $stmt->fetch(PDO::FETCH_OBJ);
             $db = null;
-
             if ($count) {
-                $_SESSION['uid'] = $data->uid; //storing user session value
+                $_SESSION['uid'] = $data->uid; // Storing user session value
                 return true;
             } else {
                 return false;
             }
         } catch (PDOException $e) {
-            echo '{"error":{"text:' . $e->getMessage() . '}}';
+            echo '{"error":{"text":' . $e->getMessage() . '}}';
         }
     }
 
-    /* User registration */
-
-    public function userRegistratio($username, $password, $email, $name)
+    /* User Registration */
+    public function userRegistration($username, $password, $email, $name)
     {
         try {
             $db = getDB();
@@ -39,7 +37,7 @@ class userClass
             $st->execute();
             $count = $st->rowCount();
             if ($count < 1) {
-                $stmt = $db->prepare("INSERT INTO users(username, password, email, name) VALUES (:username, hash_password, :email,:name");
+                $stmt = $db->prepare("INSERT INTO users(username,password,email,name) VALUES (:username,:hash_password,:email,:name)");
                 $stmt->bindParam("username", $username, PDO::PARAM_STR);
                 $hash_password = hash('sha256', $password); //Password encryption
                 $stmt->bindParam("hash_password", $hash_password, PDO::PARAM_STR);
@@ -50,28 +48,27 @@ class userClass
                 $db = null;
                 $_SESSION['uid'] = $uid;
                 return true;
-            }else{
+            } else {
                 $db = null;
                 return false;
             }
         } catch (PDOException $e) {
-            echo '{"error":{"text:' . $e->getMessage() . '}}';
+            echo '{"error":{"text":' . $e->getMessage() . '}}';
         }
     }
 
     /* User Details */
-
     public function userDetails($uid)
     {
         try {
             $db = getDB();
-            $stmt = $db->prepare("SELECT email, username, name FROM users WHERE uid=:uid");
+            $stmt = $db->prepare("SELECT email,username,name FROM users WHERE uid=:uid");
             $stmt->bindParam("uid", $uid, PDO::PARAM_INT);
             $stmt->execute();
-            $data = $stmt->fetch(PDO::FETCH_OBJ); //user data
+            $data = $stmt->fetch(PDO::FETCH_OBJ); //User data
             return $data;
         } catch (PDOException $e) {
-            echo '{"error":{"text:' . $e->getMessage() . '}}';
+            echo '{"error":{"text":' . $e->getMessage() . '}}';
         }
     }
 }

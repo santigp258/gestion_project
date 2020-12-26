@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="../css/estilos.css">
+    <link rel="stylesheet" href="../css/fontawesome-all.min.css">
+    <link rel="icon" href="img/logo.ico">
+</head>
+<body>
+ <form class="formulario" action="./sendData.php" method="POST" name="signup">
+    
+    <h1>Registrate</h1>
+     <div class="contenedor">
+     
+     <div class="input-contenedor">
+       <i class="fas fa-user icon"></i>
+       <input type="text" placeholder="Nombre Completo" name="nameReg">
+       
+      </div>
+      <div class="input-contenedor">
+        <i class="far fa-user-circle icon"></i>
+          <input type="text" placeholder="Usuario" name="usernameReg">
+      </div>
+         <div class="input-contenedor">
+         <i class="fas fa-envelope icon"></i>
+         <input type="email" placeholder="Correo Electronico" name="emailReg">
+         
+         </div>
+         
+         <div class="input-contenedor">
+        <i class="fas fa-key icon"></i>
+         <input type="password" placeholder="Contraseña" name="passwordReg">
+         
+         </div>
+         <input type="submit" value="Registrate" class="button" name="signupSubmit">
+         <p>Al registrarte, aceptas nuestras Condiciones de uso y Política de privacidad.</p>
+         <p>¿Ya tienes una cuenta?<a class="link" href="loginview.php"> Iniciar Sesion</a></p>
+     </div>
+    </form>
+</body>
+</html>
