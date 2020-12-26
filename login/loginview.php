@@ -2,35 +2,39 @@
 <html lang="es">
 
 <head>
-    <meta charset="UTF-8">
-    <title>Login</title>
-    <meta name="viewport" content="width=device-width, user-scalable=yes, initial-scale=1.0, maximum-scale=3.0, minimum-scale=1.0">
-    <link rel="stylesheet" href="../css/estilos.css">
-    <link rel="stylesheet" href="../css/fontawesome-all.min.css">
+  <meta charset="UTF-8">
+  <title>Login-MP</title>
+  <meta name="viewport"
+    content="width=device-width, user-scalable=yes, initial-scale=1.0, maximum-scale=3.0, minimum-scale=1.0">
+  <link rel="stylesheet" href="../css/estilos.css">
+  <!-- <link rel="stylesheet" href="../css/fontawesome-all.min.css"> -->
 </head>
 
 <body>
-    <form class="formulario" action="./sendData.php" method="POST">
+  <div class="container-all">
+    <div class="ctn-form">
+      <img src="../img/logo.png" alt="logo" class="logo">
+      <h1 class="title">Iniciar Sesión</h1>
+      <form action="./sendData.php" method="POST">
+        <label for="">Email</label>
+        <input type="email">
+        <label for="">Contraseña</label>
+        <input type="password">
+        <input type="submit" value="Iniciar">
+      </form>
+      <span class="text-footer">¿Aún no te has registrado?<a href="registerview.php">Registrate</a></span>
+    </div>
+    <!-- Lado Derecho -->
+    <div class="ctn-text">
+      <div class="capa"></div>
+      <h1 class="title-description">Lorem ipsum dolor sit amet</h1>
+      <p class="text-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati et culpa molestiae
+        ea
+        tenetur temporibus suscipit, labore, repellat provident delectus facere iusto quo dolorum esse, dignissimos
+        aliquam blanditiis dolorem. Odio.</p>
+    </div>
+  </div>
 
-        <h1>Login</h1>
-        <div class="contenedor">
-
-            <div class="input-contenedor">
-                <i class="fas fa-envelope icon"></i>
-                <input type="text" placeholder="Username or Email" name="usernameEmail">
-
-            </div>
-
-            <div class="input-contenedor">
-                <i class="fas fa-key icon"></i>
-                <input type="password" placeholder="Contraseña" name="password">
-
-            </div>
-            <input type="submit" value="Login" class="button" name="loginSubmit">
-            <p>Al registrarte, aceptas nuestras Condiciones de uso y Política de privacidad.</p>
-            <p>¿No tienes una cuenta? <a class="link" href="registerview.html">Registrate </a></p>
-        </div>
-    </form>
 </body>
 
 </html>

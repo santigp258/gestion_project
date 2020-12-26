@@ -1,195 +1,142 @@
-body {
-    font-family: Arial, Helvetica, sans-serif;
-    margin: 0;
-    background-image: linear-gradient(5deg, #003549 0, #003342 6.25%, #002f3a 12.5%, #002a32 18.75%, #012529 25%, #061f20 31.25%, #061817 37.5%, #030f0e 43.75%, #000000 50%, #000000 56.25%, #000000 62.5%, #000000 68.75%, #000000 75%, #000000 81.25%, #000000 87.5%, #000000 93.75%, #000000 100%);
-    background-size: cover;
-    background-attachment: fixed;
-    margin-bottom: 100px;
-}
+@import url("https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i");
+
 * {
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+  text-decoration: none;
 }
-.contenedor{
+
+body {
+  background: linear-gradient(90deg, #bf4222, #e30f87);
+  padding: 20px;
+}
+
+.container-all {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  margin-top: 100px;
+  display: flex;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.ctn-form {
+  width: 80%;
+  padding: 40px;
+  background: #f7f7f7;
+}
+
+.logo {
+  width: 150px;
+  display: block;
+  margin: auto;
+}
+
+.title {
+  text-align: center;
+  margin-top: 20px;
+  font-weight: 300;
+  color: #7a7a7a;
+}
+
+label {
+  display: block;
+  margin-top: 30px;
+  font-size: 20px;
+  font-weight: 300;
+  color: #7a7a7a;
+}
+
+input[type="email"],
+input[type="password"] {
+  width: 100%;
+  height: 30px;
+  background: rgba(0, 0, 0, 0);
+  border: 0px;
+  outline: 0px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+  color: #7a7a7a;
+  font-size: 16px;
+}
+
+input[type="submit"] {
+  width: 100%;
+  height: 50px;
+  margin-top: 60px;
+  color: white;
+  border: 0px;
+  background: linear-gradient(90deg, #bf4222, #e30f87);
+  font-weight: 300;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+input[type="submit"]:hover {
+  background: linear-gradient(90deg, #e30f87, #bf4222);
+}
+
+.text-footer {
+  display: block;
+  margin-top: 100px;
+  text-align: center;
+  color: #7a7a7a;
+  font-weight: 300;
+}
+
+.text-footer a {
+  color: #029ee1;
+  font-weight: 500;
+}
+
+/* Lado Derecho */
+
+.ctn-text {
+  width: 100%;
+  background-image: url(../img/form-background.jpg);
+  background-position: center;
+  background-size: cover;
+  padding: 40px;
+  position: relative;
+}
+
+.capa {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: linear-gradient(90deg, #e30f87, #bf4222);
+  opacity: 0.8;
+}
+
+.title-description {
+  position: relative;
+  top: 80px;
+  color: white;
+  font-weight: 300;
+  font-size: 40px;
+}
+
+.text-description {
+  position: relative;
+  top: 110px;
+  color: white;
+  font-weight: 200;
+  font-size: 18px;
+}
+
+/* Responsive */
+
+@media screen and (max-width: 800px) {
+  .ctn-text {
+    display: none;
+  }
+  .ctn-form {
+    margin: auto;
     width: 100%;
-    padding: 15px;
+    background: white;
+  }
 }
-.formulario{
-    background: #fff;
-    margin-top: 150px;
-    padding: 3px;
-    border: 1px solid #000000;
-}
-h1{
-    text-align: center;
-    color: #000000;
-    font-size: 40px;
-}
-input[type="text"],
-input[type="password"],
-input[type="email"]{
-    font-size: 20px;
-    width: 82%;
-    padding: 10px;
-    border: none;
-}
-.input-contenedor{
-    margin-bottom: 15px;
-    border: 1px solid #aaa;
-}
-.icon{
-    width: 50px;
-    text-align: center;
-    color: #999;
-}
-.button{
-    border: none;
-    width: 100%;
-    color: white;
-    font-size: 20px;
-    background:  #1a2537;
-    padding: 15px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-}
-.button:hover{
-    background: rgb(61, 123, 148);
-}
-p{
-    text-align: center;
-}
-.link{
-    text-decoration: none;
-      color: #1a2537;
-    font-weight: 600;
-}
-.link:hover{
-     color: cadetblue;
-}
-
-@media(min-width:768px)
-{
-    .formulario{
-        margin: auto;
-        width: 500px;
-        margin-top: 100px;
-        margin-bottom: 100px;
-        border-radius: 2%;
-    }
-    .formulario{
-        background: #fff;
-        margin-top: 150px;
-        padding: 3px;
-    }
-    h1{
-        text-align: center;
-        color: #1a2537;
-        font-size: 40px;
-    }
-    input[type="text"],
-    input[type="password"],
-    input[type="email"]{
-        font-size: 20px;
-        width: 82%;
-        padding: 10px;
-        border: none;
-    }
-    .input-contenedor{
-        margin-bottom: 15px;
-    }
-    .icon{
-        width: 50px;
-        text-align: center;
-        color: #999;
-    }
-}
-
-@media(min-width:368px)
-{
-    .formulario{
-        margin: auto;
-        width: 80%;
-        margin-top: 50px;
-    }
-    input[type="text"],
-    input[type="password"],
-    input[type="email"]{
-    font-size: 15px;
-    width: 80%;
-    border: none;
-    margin: 0;
-}
-.input-contenedor{
-    margin-bottom: 15px;
-    border: 1px solid #aaa;
-    display: flex;
-}
-.icon{
-    width: 20%;
-    justify-content: center;
-    color: #999;
-    font-size: 25px;
-    margin-top: 4px;
-}
-.icon::before{
-    justify-content: center;
-}
-}
-
-@media(min-width:768px)
-{
-    .formulario{
-        margin: auto;
-        width: 500px;
-        margin-top: 100px;
-        border-radius: 2%;
-    }
-    h1{
-        text-align: center;
-        color: #1a2537;
-        font-size: 40px;
-    }
-    input[type="text"],
-    input[type="password"],
-    input[type="email"]{
-        font-size: 20px;
-        width: 100%;
-        padding: 10px;
-        border: none;
-    }
-    .input-contenedor{
-        margin-bottom: 15px;
-        border: 1px solid #aaa;
-    }
-    .icon{
-        width: 50px;
-        text-align: center;
-        color: #999;
-    }
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
