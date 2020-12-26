@@ -4,7 +4,7 @@ $session_uid='';
 $_SESSION['uid']=''; 
 if(empty($session_uid) && empty($_SESSION['uid']))
 {
-$url='../index.html';
+$url='../index.php';
 header("Location: $url");
 //echo "";
 }

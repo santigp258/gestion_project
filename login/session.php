@@ -6,6 +6,6 @@ if (!empty($_SESSION['uid'])) {
     $userClass = new userClass();
 }
 if (empty($session_uid)) {
-    $url = BASE_URL . 'index.html';
+    $url = BASE_URL . 'index.php';
     header("Location: $url");
 }

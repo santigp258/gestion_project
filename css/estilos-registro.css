@@ -67,7 +67,7 @@ input[type="password"] {
 input[type="submit"] {
   width: 100%;
   height: 50px;
-  margin-top: 20px; 
+/*   margin-top: 20px;  */
   color: white;
   border: 0px;
   background: linear-gradient(90deg, #bf4222, #e30f87);
@@ -141,4 +141,11 @@ input[type="submit"]:hover {
     width: 100%;
     background: white;
   }
+}
+
+
+/* PARTICULAR CHANGES */
+
+.submit-login{
+  margin-top: 70px;
 }
