@@ -11,7 +11,31 @@
 </head>
 
 <body>
-
+  <div class="container-all">
+    <div class="ctn-form">
+      <img src="../img/logo.png" alt="logo" class="logo">
+      <h1 class="title">Registrate</h1>
+      <form action="./sendData.php" method="POST">
+        <label for="">Nombre</label>
+        <input type="text">
+        <label for="">Email</label>
+        <input type="email">
+        <label for="">Contraseña</label>
+        <input type="password">
+        <input type="submit" value="Registrarse">
+      </form>
+      <span class="text-footer">¿Ya te has registrado?<a href="loginview.php">Iniciar Sesión</a></span>
+    </div>
+    <!-- Lado Derecho -->
+    <div class="ctn-text">
+      <div class="capa"></div>
+      <h1 class="title-description">Lorem ipsum dolor sit amet</h1>
+      <p class="text-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati et culpa molestiae
+        ea
+        tenetur temporibus suscipit, labore, repellat provident delectus facere iusto quo dolorum esse, dignissimos
+        aliquam blanditiis dolorem. Odio.</p>
+    </div>
+  </div>
 </body>
 
 </html>
