@@ -32,17 +32,17 @@ include('../includes/config.php');
     <img src="<?php echo BASE_URL ?>img/logo.png" alt="logo" class="logo">
     <h1 class="title">Registrate</h1>
     <form action="<?php echo BASE_URL ?>/login/sendData.php" method="POST" name="signup">
-      <label for="nameReg">Nombre</label>
+      <label for="nameReg" class="label">Nombre</label>
       <input type="text" name="nameReg" id="nameReg">
-      <label for="usernameReg">Username</label>
+      <label for="usernameReg" class="label">Username</label>
       <input type="text" name="usernameReg" id="usernameReg">
-      <label for="emailReg">Email</label>
+      <label for="emailReg" class="label">Email</label>
       <input type="email" name="emailReg" id="emailReg">
-      <label for="passwordReg">Contraseña</label>
-      <input type="password" name="passwordReg" id="passwordReg">
+      <label for="passwordReg" class="label">Contraseña</label>
+      <input type="password" name="passwordReg" id="passwordReg" class="last-child">
       <input type="submit" value="Registrarse" name="signupSubmit">
     </form>
-    <span class="text-footer">¿Ya te has registrado?<a href="<?php echo BASE_URL ?>index.php"> Iniciar Sesión</a></span>
+    <span class="text-footer text-footer-registration">¿Ya te has registrado?<a href="<?php echo BASE_URL ?>index.php"> Iniciar Sesión</a></span>
   </div>
   <!-- Lado Derecho -->
   <div class="ctn-text">

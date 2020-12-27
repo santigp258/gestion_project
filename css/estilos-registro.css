@@ -31,7 +31,7 @@ body {
 }
 
 .logo {
-  width: 150px;
+  width: 120px;
   display: block;
   margin: auto;
 }
@@ -145,7 +145,20 @@ input[type="submit"]:hover {
 
 
 /* PARTICULAR CHANGES */
-
+/* LOGIN */
 .submit-login{
-  margin-top: 70px;
+  margin-top: 50px;
+}
+
+
+/* REGISTER */
+.last-child{
+  margin-bottom: 20px;
+}
+
+.label{
+  margin-top: 15px;
+}
+.text-footer-registration{
+  margin-top: 10px;
 }
