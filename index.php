@@ -21,7 +21,7 @@ include('./includes/config.php')
 
   <link rel="stylesheet" href="<?php echo BASE_URL ?>css/normalize.css">
   <link rel="stylesheet" href="<?php echo BASE_URL ?>css/main.css">
-  <link rel="stylesheet" href="<?php echo BASE_URL ?>css/estilos-registro.css">
+  <link rel="stylesheet" href="<?php echo BASE_URL ?>css/estilos.css">
   <link rel="stylesheet" href="<?php echo BASE_URL ?>css/inputRegister.css">
 
   <meta name="theme-color" content="#fafafa">
