@@ -26,14 +26,6 @@ include('./includes/config.php')
 
   <meta name="theme-color" content="#fafafa">
 </head>
-<style>
-  input:focus~label,
-  input.used~label {
-    left: -18px!important;
-   
-  }
-</style>
-
 <body>
   <!-- Add your site or application content here -->
   <div class="container-all">
@@ -42,7 +34,7 @@ include('./includes/config.php')
       <h1 class="title">Iniciar Sesión</h1>
       <form action="<?php echo BASE_URL ?>login/sendData.php" method="POST" name="login">
         <div class="group">
-          <input type="text" name="usernameEmail" id="usernameEmail" autofocus><span class="highlight"></span><span class="bar"></span>
+          <input type="text" name="usernameEmail" id="usernameEmail" autofocus><span class="highlight" ></span><span class="bar"></span>
           <label>Email o Usuario</label>
         </div>
         <div class="group">
@@ -65,22 +57,8 @@ include('./includes/config.php')
     </div>
   </div>
   <script src="<?php echo BASE_URL ?>js/jquery.js"></script>
-  <script src="<?php echo BASE_URL ?>js/plugins.js"></script>
   <script src="<?php echo BASE_URL ?>js/main.js"></script>
 
-  <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
-  <script>
-    window.ga = function() {
-      ga.q.push(arguments)
-    };
-    ga.q = [];
-    ga.l = +new Date;
-    ga('create', 'UA-XXXXX-Y', 'auto');
-    ga('set', 'anonymizeIp', true);
-    ga('set', 'transport', 'beacon');
-    ga('send', 'pageview')
-  </script>
-  <script src="https://www.google-analytics.com/analytics.js" async></script>
 </body>
 
 </html>
