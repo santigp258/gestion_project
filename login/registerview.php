@@ -65,6 +65,8 @@ include('../includes/config.php');
         aliquam blanditiis dolorem. Odio.</p>
     </div>
   </div>
+  <script src="<?php echo BASE_URL ?>js/jquery.js"></script>
+  <script src="<?php echo BASE_URL ?>js/main.js"></script>
 </body>
 
 </html>
