@@ -15,7 +15,7 @@ body {
 
 .container-all {
   width: 100%;
- max-width: 1000px; 
+  max-width: 1000px;
   height: 620px;
   margin: auto;
   margin-top: 25px;
@@ -51,7 +51,7 @@ label {
   color: #7a7a7a;
 }
 
-input[type="text"],
+/*  input[type="text"],
 input[type="email"],
 input[type="password"] {
   width: 100%;
@@ -64,10 +64,15 @@ input[type="password"] {
   font-size: 16px;
 }
 
-input[type="submit"] {
+
+
+input[type="submit"]:hover {
+  background: linear-gradient(90deg, #e30f87, #bf4222);
+}  */
+button[type="submit"] {
   width: 100%;
   height: 50px;
-/*   margin-top: 20px;  */
+   margin-top: 20px;  
   color: white;
   border: 0px;
   background: linear-gradient(90deg, #bf4222, #e30f87);
@@ -75,11 +80,6 @@ input[type="submit"] {
   cursor: pointer;
   font-size: 18px;
 }
-
-input[type="submit"]:hover {
-  background: linear-gradient(90deg, #e30f87, #bf4222);
-}
-
 .text-footer {
   margin-top: 7px;
   display: block;
@@ -143,22 +143,20 @@ input[type="submit"]:hover {
   }
 }
 
-
 /* PARTICULAR CHANGES */
 /* LOGIN */
-.submit-login{
+.submit-login {
   margin-top: 50px;
 }
 
-
 /* REGISTER */
-.last-child{
+.last-child {
   margin-bottom: 20px;
 }
 
-.label{
+.label {
   margin-top: 15px;
 }
-.text-footer-registration{
+.text-footer-registration {
   margin-top: 10px;
 }

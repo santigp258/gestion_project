@@ -1,0 +1,118 @@
+.group {
+    position: relative;
+    margin-bottom: 45px;
+}
+
+input {
+    font-size: 18px;
+    /* padding: 10px 10px 10px 5px; */
+    -webkit-appearance: none;
+    display: block;
+    width: 100%;
+    height: 30px;
+    background: rgba(0, 0, 0, 0);
+    border: 0px;
+    outline: 0px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+    color: #7a7a7a;
+}
+
+input:focus {
+    outline: none;
+}
+
+
+/* Label */
+
+label {
+    color: #999;
+    font-size: 18px;
+    font-weight: normal;
+    position: absolute;
+    pointer-events: none;
+    left: 0px;
+    top: -39px;
+    transition: all 0.2s ease;
+}
+
+
+/* active */
+
+input:focus~label,
+input.used~label {
+    top: -60px;
+    transform: scale(.75);
+    left: -12px;
+    font-size: 20px;
+    color: #4a89dc;
+}
+
+
+/* Underline */
+
+.bar {
+    position: relative;
+    display: block;
+    width: 100%;
+}
+
+.bar:before,
+.bar:after {
+    content: '';
+    height: 2px;
+    width: 0;
+    bottom: 1px;
+    position: absolute;
+    background: #4a89dc;
+    transition: all 0.2s ease;
+}
+
+.bar:before {
+    left: 50%;
+}
+
+.bar:after {
+    right: 50%;
+}
+
+
+/* active */
+
+input:focus~.bar:before,
+input:focus~.bar:after {
+    width: 50%;
+}
+
+
+/* Highlight */
+
+.highlight {
+    position: absolute;
+    height: 60%;
+    width: 100px;
+    top: 25%;
+    left: 0;
+    pointer-events: none;
+    opacity: 0.5;
+}
+
+
+/* active */
+
+input:focus~.highlight {
+    animation: inputHighlighter 0.3s ease;
+}
+
+
+/* Animations */
+
+@keyframes inputHighlighter {
+    from {
+        background: #4a89dc;
+    }
+
+    to {
+        width: 0;
+        background: transparent;
+    }
+}

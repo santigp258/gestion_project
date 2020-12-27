@@ -1,4 +1,4 @@
-<?php 
+<?php
 include('./includes/config.php')
 ?>
 <!doctype html>
@@ -22,9 +22,17 @@ include('./includes/config.php')
   <link rel="stylesheet" href="<?php echo BASE_URL ?>css/normalize.css">
   <link rel="stylesheet" href="<?php echo BASE_URL ?>css/main.css">
   <link rel="stylesheet" href="<?php echo BASE_URL ?>css/estilos-registro.css">
+  <link rel="stylesheet" href="<?php echo BASE_URL ?>css/inputRegister.css">
 
   <meta name="theme-color" content="#fafafa">
 </head>
+<style>
+  input:focus~label,
+  input.used~label {
+    left: -18px!important;
+   
+  }
+</style>
 
 <body>
   <!-- Add your site or application content here -->
@@ -33,12 +41,18 @@ include('./includes/config.php')
       <img src="<?php echo BASE_URL ?>img/logo.png" alt="logo" class="logo">
       <h1 class="title">Iniciar Sesión</h1>
       <form action="<?php echo BASE_URL ?>login/sendData.php" method="POST" name="login">
-        <label for="usernameEmail">Email o Usuario</label>
-        <input type="text" id="usernameEmail" name="usernameEmail" autofocus>
-        <label for="password">Contraseña</label>
-        <input type="password" name="password">
-        <input type="submit" value="Iniciar" name="loginSubmit" class="submit-login">
+        <div class="group">
+          <input type="text" name="usernameEmail" id="usernameEmail" autofocus><span class="highlight"></span><span class="bar"></span>
+          <label>Email o Usuario</label>
+        </div>
+        <div class="group">
+          <input type="password" name="password" id="password" autocomplete="off"><span class="highlight"></span><span class="bar"></span>
+          <label>Contraseña</label>
+        </div>
+        <button type="submit" class="text-footer text-footer-registration" name="loginSubmit">Subscribe
+        </button>
       </form>
+
       <span class="text-footer">¿Aún no te has registrado?<a href="<?php echo BASE_URL ?>login/registerview.php"> Registrate</a></span>
     </div>
     <!-- Lado Derecho -->
