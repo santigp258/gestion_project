@@ -33,8 +33,8 @@ include('./includes/config.php')
       <img src="<?php echo BASE_URL ?>img/logo.png" alt="logo" class="logo">
       <h1 class="title">Iniciar Sesión</h1>
       <form action="<?php echo BASE_URL ?>login/sendData.php" method="POST" name="login">
-        <label for="usernameEmail">Email</label>
-        <input type="text" id="usernameEmail" name="usernameEmail">
+        <label for="usernameEmail">Email o Usuario</label>
+        <input type="text" id="usernameEmail" name="usernameEmail" autofocus>
         <label for="password">Contraseña</label>
         <input type="password" name="password">
         <input type="submit" value="Iniciar" name="loginSubmit" class="submit-login">
