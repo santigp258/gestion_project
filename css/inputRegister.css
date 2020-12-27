@@ -3,7 +3,9 @@
     margin-bottom: 45px;
 }
 
-input {
+input[type="password"],
+input[type="text"],
+input[type="email"] {
     font-size: 18px;
     /* padding: 10px 10px 10px 5px; */
     -webkit-appearance: none;
@@ -17,7 +19,9 @@ input {
     color: #7a7a7a;
 }
 
-input:focus {
+input[type="password"]:focus,
+input[type="text"]:focus,
+input[type="email"]:focus {
     outline: none;
 }
 

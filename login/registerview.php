@@ -49,9 +49,7 @@ include('../includes/config.php');
           <input type="text" name="passwordReg" id="passwordReg" autocomplete="off"><span class="highlight"></span><span class="bar"></span>
           <label>Contraseña</label>
         </div>
-        <button type="submit" class="text-footer text-footer-registration" name="signupSubmit">Subscribe
-
-        </button>
+        <input type="submit" class="text-footer text-footer-registration" name="signupSubmit" value="Registrar">
       </form>
       <span class="text-footer text-footer-registration">¿Ya te has registrado?<a href="<?php echo BASE_URL ?>index.php"> Iniciar Sesión</a></span>
     </div>

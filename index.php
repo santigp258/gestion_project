@@ -49,8 +49,7 @@ include('./includes/config.php')
           <input type="password" name="password" id="password" autocomplete="off"><span class="highlight"></span><span class="bar"></span>
           <label>Contraseña</label>
         </div>
-        <button type="submit" class="text-footer text-footer-registration" name="loginSubmit">Subscribe
-        </button>
+       <input type="submit" name="loginSubmit" value="Iniciar" class="btn">
       </form>
 
       <span class="text-footer">¿Aún no te has registrado?<a href="<?php echo BASE_URL ?>login/registerview.php"> Registrate</a></span>
