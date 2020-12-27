@@ -65,7 +65,6 @@ include('./includes/config.php')
     </div>
   </div>
   <script src="<?php echo BASE_URL ?>js/jquery.js"></script>
-  <script src="<?php echo BASE_URL ?>js/vendor/modernizr-3.11.2.min.js"></script>
   <script src="<?php echo BASE_URL ?>js/plugins.js"></script>
   <script src="<?php echo BASE_URL ?>js/main.js"></script>
 
