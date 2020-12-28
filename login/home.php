@@ -30,7 +30,9 @@
   //include('../includes/config.php');
   $userDetails = $userClass->userDetails($session_uid);
   ?>
-  <h1>Welcome <?php echo $userDetails->name; ?></h1>
+  <h1>Welcome <?php echo $userDetails->username; ?></h1>
+
+  <a href="<?php echo BASE_URL ?>login/logout.php">Logout</a>
 
 </body>
 

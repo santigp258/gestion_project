@@ -27,7 +27,7 @@ class userClass
     }
 
     /* User Registration */
-    public function userRegistration($username, $password, $email, $name)
+    public function userRegistration($username, $password, $email)
     {
         try {
             $db = getDB();
@@ -37,12 +37,11 @@ class userClass
             $st->execute();
             $count = $st->rowCount();
             if ($count < 1) {
-                $stmt = $db->prepare("INSERT INTO users(username,password,email,name) VALUES (:username,:hash_password,:email,:name)");
+                $stmt = $db->prepare("INSERT INTO users(username,password,email) VALUES (:username,:hash_password,:email)");
                 $stmt->bindParam("username", $username, PDO::PARAM_STR);
                 $hash_password = hash('sha256', $password); //Password encryption
                 $stmt->bindParam("hash_password", $hash_password, PDO::PARAM_STR);
                 $stmt->bindParam("email", $email, PDO::PARAM_STR);
-                $stmt->bindParam("name", $name, PDO::PARAM_STR);
                 $stmt->execute();
                 $uid = $db->lastInsertId(); // Last inserted row id
                 $db = null;
@@ -62,7 +61,7 @@ class userClass
     {
         try {
             $db = getDB();
-            $stmt = $db->prepare("SELECT email,username,name FROM users WHERE uid=:uid");
+            $stmt = $db->prepare("SELECT email,username FROM users WHERE uid=:uid");
             $stmt->bindParam("uid", $uid, PDO::PARAM_INT);
             $stmt->execute();
             $data = $stmt->fetch(PDO::FETCH_OBJ); //User data
