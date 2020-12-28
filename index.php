@@ -22,29 +22,30 @@ include('./includes/config.php')
   <link rel="stylesheet" href="<?php echo BASE_URL ?>css/normalize.css">
   <link rel="stylesheet" href="<?php echo BASE_URL ?>css/main.css">
   <link rel="stylesheet" href="<?php echo BASE_URL ?>css/estilos.css">
-  <link rel="stylesheet" href="<?php echo BASE_URL ?>css/inputRegister.css">
 
   <meta name="theme-color" content="#fafafa">
 </head>
+
 <body>
   <!-- Add your site or application content here -->
   <div class="container-all">
     <div class="ctn-form">
       <img src="<?php echo BASE_URL ?>img/logo.png" alt="logo" class="logo">
       <h1 class="title">Iniciar Sesión</h1>
-      <form action="<?php echo BASE_URL ?>login/sendData.php" method="POST" name="login">
-        <div class="group">
-          <input type="text" name="usernameEmail" id="usernameEmail" autofocus><span class="highlight" ></span><span class="bar"></span>
-          <label>Email o Usuario</label>
-        </div>
-        <div class="group">
-          <input type="password" name="password" id="password" autocomplete="off"><span class="highlight"></span><span class="bar"></span>
-          <label>Contraseña</label>
-        </div>
-       <input type="submit" name="loginSubmit" value="Iniciar" class="btn">
-      </form>
 
-      <span class="text-footer">¿Aún no te has registrado?<a href="<?php echo BASE_URL ?>login/registerview.php"> Registrate</a></span>
+      <form action="<?php echo BASE_URL ?>login/sendData.php" method="POST" name="login">
+        <!-- Email -->
+        <label for="usernameEmail">Email o Usuario</label>
+        <input type="text" name="usernameEmail" id="usernameEmail" autofocus>
+        <!-- Password -->
+        <label for="password">Contraseña</label>
+        <input type="password" name="password" id="password" autocomplete="off">
+        <!-- Boton Iniciar -->
+        <input type="submit" name="loginSubmit" value="Iniciar">
+      </form>
+      <!-- Text footer -->
+      <span class="text-footer">¿Aún no te has registrado?<a
+          href="<?php echo BASE_URL ?>login/registerview.php">Registrate</a></span>
     </div>
     <!-- Lado Derecho -->
     <div class="ctn-text">

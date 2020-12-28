@@ -20,9 +20,7 @@ include('../includes/config.php');
   <!-- Place favicon.ico in the root directory -->
 
   <link rel="stylesheet" href="<?php echo BASE_URL ?>css/normalize.css">
-  <link rel="stylesheet" href="<?php echo BASE_URL ?>css/main.css">
-  <link rel="stylesheet" href="<?php echo BASE_URL ?>css/estilos-registro.css">
-  <link rel="stylesheet" href="<?php echo BASE_URL ?>css/inputRegister.css">
+  <link rel="stylesheet" href="<?php echo BASE_URL ?>css/registro.css">
 
   <meta name="theme-color" content="#fafafa">
 </head>
@@ -33,25 +31,21 @@ include('../includes/config.php');
       <img src="<?php echo BASE_URL ?>img/logo.png" alt="logo" class="logo">
       <h1 class="title">Registro</h1>
       <form action="<?php echo BASE_URL ?>/login/sendData.php" method="POST" name="signup">
-        <div class="group">
-          <input type="text" autocomplete="off" name="nameReg" id="nameReg" autofocus><span class="highlight"></span><span class="bar"></span>
-          <label>Nombre</label>
-        </div>
-        <div class="group">
-          <input type="text" name="usernameReg" id="usernameReg" autocomplete="off"><span class="highlight"></span><span class="bar"></span>
-          <label>Usuario</label>
-        </div>
-        <div class="group">
-          <input type="email" name="emailReg" id="emailReg" autocomplete="off"><span class="highlight"></span><span class="bar"></span>
-          <label>Email</label>
-        </div>
-        <div class="group">
-          <input type="text" name="passwordReg" id="passwordReg" autocomplete="off"><span class="highlight"></span><span class="bar"></span>
-          <label>Contraseña</label>
-        </div>
-        <input type="submit" class="text-footer text-footer-registration" name="signupSubmit" value="Registrar">
+        <!-- User -->
+        <label for="usernameReg">Usuario</label>
+        <input type="text" name="usernameReg" id="usernameReg" autocomplete="off" autofocus>
+        <!-- Email -->
+        <label for="emailReg">Email</label>
+        <input type="text" name="emailReg" id="emailReg" autocomplete="off">
+        <!-- Password -->
+        <label for="passwordReg">Contraseña</label>
+        <input type="text" name="passwordReg" id="passwordReg" autocomplete="off">
+        <!-- Boton Registarse -->
+        <input type="submit" name="signupSubmit" value="Registrar">
       </form>
-      <span class="text-footer text-footer-registration">¿Ya te has registrado?<a href="<?php echo BASE_URL ?>index.php"> Iniciar Sesión</a></span>
+      <!-- Text Footer -->
+      <span class="text-footer">¿Ya te has registrado?<a href="<?php echo BASE_URL ?>index.php">
+          Iniciar Sesión</a></span>
     </div>
     <!-- Lado Derecho -->
     <div class="ctn-text">
