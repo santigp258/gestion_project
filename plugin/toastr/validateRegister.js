@@ -2,9 +2,9 @@ $(document).ready(function () {
   const input = $("form input");
 
   const expressions = {
-    usernameReg: /^[a-zA-ZÀ-ÿ\s]{1,40}$/,
-    emailReg: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
-    passwordReg: /^.{4,12}$/,
+    usernameReg: /^[A-Za-z0-9_]{3,20}$/,
+    emailReg: /^[a-zA-Z0-9_\-\.]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
+    passwordReg: /^[A-Za-z0-9!@#$%^&*()_]{6,20}$/,
   };
 
   const fields = {
