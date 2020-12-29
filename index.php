@@ -10,18 +10,9 @@ include('./includes/config.php')
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <meta property="og:title" content="">
-  <meta property="og:type" content="">
-  <meta property="og:url" content="">
-  <meta property="og:image" content="">
-
-  <link rel="manifest" href="site.webmanifest">
-  <link rel="apple-touch-icon" href="icon.png">
-  <!-- Place favicon.ico in the root directory -->
-
   <link rel="stylesheet" href="<?php echo BASE_URL ?>css/normalize.css">
-  <link rel="stylesheet" href="<?php echo BASE_URL ?>css/main.css">
   <link rel="stylesheet" href="<?php echo BASE_URL ?>css/estilos.css">
+  <link rel="stylesheet" href="<?php echo BASE_URL ?>plugin/toastr.min.css">
 
   <meta name="theme-color" content="#fafafa">
 </head>
@@ -45,7 +36,7 @@ include('./includes/config.php')
       </form>
       <!-- Text footer -->
       <span class="text-footer">¿Aún no te has registrado?<a
-          href="<?php echo BASE_URL ?>login/registerview.php">Registrate</a></span>
+          href="<?php echo BASE_URL ?>login/registerview.php"> Registrate</a></span>
     </div>
     <!-- Lado Derecho -->
     <div class="ctn-text">
@@ -59,6 +50,7 @@ include('./includes/config.php')
   </div>
   <script src="<?php echo BASE_URL ?>js/jquery.js"></script>
   <script src="<?php echo BASE_URL ?>js/main.js"></script>
+  <script src="<?php echo BASE_URL ?>plugin/toastr.min.js"></script>
 
 </body>
 
