@@ -36,8 +36,11 @@ if (!empty($_POST['signupSubmit'])) {
             $url = BASE_URL . 'login/home.php';
             header("Location: $url"); // Page redirecting to home.php 
         } else {
-            $errorMsgReg = "Username or Email already exists.";
+            echo $errorMsgReg = "Username or Email already exists.";
         }
     }
 }
 ?>
+
+
+<pre><?php var_dump($_POST) ?></pre>

@@ -1,6 +1,6 @@
 $(document).ready(function () {
-  const input = $("form input");
-
+  var inputObj = $("form input");
+  const input = [inputObj[0], inputObj[1], inputObj[2]]
   const expressions = {
     usernameReg: /^[A-Za-z0-9_]{3,20}$/,
     emailReg: /^[a-zA-Z0-9_\-\.]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
@@ -45,7 +45,7 @@ $(document).ready(function () {
     } else {
       if (fields.usernameReg == false) {
         let message =
-        "Verifique que esté ingresando caracteres validos. También debe contener de 5 a 40 caracteres.";
+        "Verifique que esté ingresando caracteres validos. También debe contener de 3 a 20 caracteres.";
         let title = '¡Campo "usuario" incorrecto!';
         toastr["warning"](message, title);
         toastr.options = {
