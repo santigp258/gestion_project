@@ -20,7 +20,7 @@ include('../includes/config.php');
 
   <link rel="stylesheet" href="<?php echo BASE_URL ?>css/normalize.css">
   <link rel="stylesheet" href="<?php echo BASE_URL ?>css/registro.css">
-   <link rel="stylesheet" href="<?php echo BASE_URL ?>plugin/toastr/toastr.min.css">
+  <link rel="stylesheet" href="<?php echo BASE_URL ?>plugin/toastr/toastr.min.css">
 
   <meta name="theme-color" content="#fafafa">
 </head>
@@ -39,7 +39,7 @@ include('../includes/config.php');
         <input type="text" name="emailReg" id="emailReg" autocomplete="off">
         <!-- Password -->
         <label for="passwordReg">Contraseña</label>
-        <input type="text" name="passwordReg" id="passwordReg" autocomplete="off">
+        <input type="password" name="passwordReg" id="passwordReg" autocomplete="off">
         <!-- Boton Registarse -->
         <input type="submit" name="signupSubmit" value="Registrar">
       </form>
