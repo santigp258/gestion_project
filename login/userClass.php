@@ -36,7 +36,7 @@ class userClass
             $st->bindParam("email", $email, PDO::PARAM_STR);
             $st->execute();
             $count = $st->rowCount();
-            echo $count;
+/*             echo $count; */
             if ($count < 1) {
                 $stmt = $db->prepare("INSERT INTO users(username,password,email) VALUES (:username,:hash_password,:email)");
                 $stmt->bindParam("username", $username, PDO::PARAM_STR);
