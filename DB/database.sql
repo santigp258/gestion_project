@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 29-12-2020 a las 03:49:25
+-- Tiempo de generación: 29-12-2020 a las 04:53:13
 -- Versión del servidor: 10.4.14-MariaDB
 -- Versión de PHP: 7.2.34
 
@@ -18,50 +18,46 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de datos: `agenda`
+-- Base de datos: `gestion`
 --
-CREATE DATABASE IF NOT EXISTS `agenda` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
-USE `agenda`;
+CREATE DATABASE IF NOT EXISTS `gestion` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
+USE `gestion`;
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `notas`
+-- Estructura de tabla para la tabla `users`
 --
 
-CREATE TABLE `notas` (
-  `id` int(20) NOT NULL,
-  `title` varchar(50) NOT NULL,
-  `descriptions` text NOT NULL,
-  `created_At` timestamp NOT NULL DEFAULT current_timestamp()
+CREATE TABLE `users` (
+  `uid` int(11) NOT NULL,
+  `username` varchar(25) NOT NULL,
+  `password` varchar(200) NOT NULL,
+  `email` varchar(100) NOT NULL,
+  `created_At` timestamp NOT NULL DEFAULT current_timestamp(),
+  `updated_At` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Volcado de datos para la tabla `notas`
---
-
-INSERT INTO `notas` (`id`, `title`, `descriptions`, `created_At`) VALUES
-(10, 'nn', 'mmm', '2020-12-27 03:46:29');
 
 --
 -- Índices para tablas volcadas
 --
 
 --
--- Indices de la tabla `notas`
+-- Indices de la tabla `users`
 --
-ALTER TABLE `notas`
-  ADD PRIMARY KEY (`id`);
+ALTER TABLE `users`
+  ADD PRIMARY KEY (`uid`),
+  ADD UNIQUE KEY `username` (`username`);
 
 --
 -- AUTO_INCREMENT de las tablas volcadas
 --
 
 --
--- AUTO_INCREMENT de la tabla `notas`
+-- AUTO_INCREMENT de la tabla `users`
 --
-ALTER TABLE `notas`
-  MODIFY `id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+ALTER TABLE `users`
+  MODIFY `uid` int(11) NOT NULL AUTO_INCREMENT;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
