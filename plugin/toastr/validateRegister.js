@@ -63,7 +63,7 @@ $(document).ready(function () {
              var success  = "<script src='" + baseURL +"plugin/toastr/infoRegister.js'></script>";
              $(document.body).append(success);
              setTimeout(()=>{
-              window.location.replace( baseURL + "login/home.php");
+              window.location.replace( baseURL + "index.php");
              }, 3000);
            
           }
