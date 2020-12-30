@@ -46,7 +46,7 @@ class userClass
                 $stmt->execute();
                 $uid = $db->lastInsertId(); // Last inserted row id
                 $db = null;
-                $_SESSION['uid'] = $uid;
+              /*   $_SESSION['uid'] = $uid; */
                 return true;
             } else {
                 $db = null;
