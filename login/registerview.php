@@ -20,7 +20,8 @@ include('../includes/config.php');
 
   <link rel="stylesheet" href="<?php echo BASE_URL ?>css/normalize.css">
   <link rel="stylesheet" href="<?php echo BASE_URL ?>css/registro.css">
-  <link rel="stylesheet" href="<?php echo BASE_URL ?>plugin/toastr/toastr.min.css">
+   <link rel="stylesheet" href="<?php echo BASE_URL ?>plugin/toastr/toastr.min.css">
+   <script src="<?php echo BASE_URL ?>js/jquery.js"></script>
 
   <meta name="theme-color" content="#fafafa">
 </head>
@@ -30,7 +31,7 @@ include('../includes/config.php');
     <div class="ctn-form">
       <img src="<?php echo BASE_URL ?>img/logo.png" alt="logo" class="logo">
       <h1 class="title">Registro</h1>
-      <form action="<?php echo BASE_URL ?>login/sendData.php" method="POST" name="signup">
+      <form action="<?php echo BASE_URL?>login/registerValidation.php" method="POST" name="signup">
         <!-- User -->
         <label for="usernameReg">Usuario</label>
         <input type="text" name="usernameReg" id="usernameReg" autocomplete="off" autofocus>
@@ -50,14 +51,13 @@ include('../includes/config.php');
     <!-- Lado Derecho -->
     <div class="ctn-text">
       <div class="capa"></div>
-      <h1 class="title-description">Lorem ipsum dolor sit amet</h1>
+      <h1 class="title-description" id="par">Lorem ipsum dolor sit amet</h1>
       <p class="text-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati et culpa molestiae
         ea
         tenetur temporibus suscipit, labore, repellat provident delectus facere iusto quo dolorum esse, dignissimos
         aliquam blanditiis dolorem. Odio.</p>
     </div>
   </div>
-  <script src="<?php echo BASE_URL ?>js/jquery.js"></script>
   <script src="<?php echo BASE_URL ?>js/main.js"></script>
   <script src="<?php echo BASE_URL ?>plugin/toastr/validateRegister.js"></script>
   <script src="<?php echo BASE_URL ?>plugin/toastr/toastr.min.js"></script>
