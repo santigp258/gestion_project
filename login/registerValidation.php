@@ -14,11 +14,10 @@ if (!empty($_POST['signupSubmit'])) {
   if ($username_check && $email_check && $password_check) {
     $uid = $userClass->userRegistration($username, $password, $email);
     if ($uid) {
-        $url = BASE_URL . 'login/home.php';
-        header("Location: $url"); // Page redirecting to home.php 
+        echo 'send';
     } else {
         $base = BASE_URL;
-        
+        echo $errorMsgReg = 'error';
     }
 }
 }

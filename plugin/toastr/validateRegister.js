@@ -46,7 +46,7 @@ $(document).ready(function () {
       let password = inputObj[2].value;
       $.ajax({
         type: 'post',
-        url: 'http://localhost/gestion_proyect/login/registerValidation.php',
+        url: $('form').attr('action'),
         data: {
           usernameReg: username, 
           emailReg: email,
@@ -54,16 +54,22 @@ $(document).ready(function () {
           signupSubmit: ' '
         },
       }).done(function(resp){
-        $(document.body).append(resp);
+          if(resp === 'error'){
+            var error  = "<script src='http://localhost/gestion_proyect/plugin/toastr/errorRegister.js'></script>";
+            $(document.body).append(error);
+          }else{
+            window.location.replace('http://localhost/gestion_proyect/login/home.php');
+          }
+        
       })
-      return true;
+      return false;
   
     } else {
       if (fields.usernameReg == false) {
         let message =
         "Verifique que esté ingresando caracteres validos. También debe contener de 3 a 20 caracteres.";
         let title = '¡Campo "usuario" incorrecto!';
-        toastr["warning"](message, title);
+        toastr["error"](message, title);
         toastr.options = {
           closeButton: true,
           progressBar: true,
@@ -73,7 +79,7 @@ $(document).ready(function () {
         let message =
         "Verifique que esté ingresando caracteres validos. Este campo debe ser de tipo email.";
         let title = '¡Campo "email" incorrecto!';
-        toastr["warning"](message, title);
+        toastr["error"](message, title);
         toastr.options = {
           closeButton: true,
           progressBar: true,
@@ -83,7 +89,7 @@ $(document).ready(function () {
         let message =
           "Verifique que esté ingresando caracteres validos. Puede ingresar caracteres alfanumericos y simbolos. También debe contener de 6 a 20 caracteres.";
         let title = '¡Campo "contraseña" incorrecto!';
-        toastr["warning"](message, title);
+        toastr["error"](message, title);
         toastr.options = {
           closeButton: true,
           progressBar: true,

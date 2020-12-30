@@ -31,7 +31,7 @@ include('../includes/config.php');
     <div class="ctn-form">
       <img src="<?php echo BASE_URL ?>img/logo.png" alt="logo" class="logo">
       <h1 class="title">Registro</h1>
-      <form action="<?php echo BASE_URL?>login/sendData.php" method="POST" name="signup">
+      <form action="<?php echo BASE_URL?>login/registerValidation.php" method="POST" name="signup">
         <!-- User -->
         <label for="usernameReg">Usuario</label>
         <input type="text" name="usernameReg" id="usernameReg" autocomplete="off" autofocus>

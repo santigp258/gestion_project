@@ -1,5 +1,4 @@
-$(document).ready(function (){
-    toastr["warning"]("Email o usuario ya existen", "¡Error!")
+toastr["success"]("Será redireccionado en unos momentos a la página principal.", "¡Se ha completa su registro exitosamente!")
 
 toastr.options = {
   "closeButton": true,
@@ -18,4 +17,3 @@ toastr.options = {
   "showMethod": "fadeIn",
   "hideMethod": "fadeOut"
 }
-  });
