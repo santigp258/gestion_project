@@ -21,7 +21,7 @@ include('./includes/config.php');
   <link rel="stylesheet" href="<?php echo BASE_URL ?>css/normalize.css">
   <link rel="stylesheet" href="<?php echo BASE_URL ?>css/estilos.css">
    <link rel="stylesheet" href="<?php echo BASE_URL ?>plugin/toastr/toastr.min.css">
-
+   <script src="<?php echo BASE_URL ?>js/jquery.js"></script>
   <meta name="theme-color" content="#fafafa">
 </head>
 
@@ -56,9 +56,9 @@ include('./includes/config.php');
         aliquam blanditiis dolorem. Odio.</p>
     </div>
   </div>
-  <script src="<?php echo BASE_URL ?>js/jquery.js"></script>
   <script src="<?php echo BASE_URL ?>js/main.js"></script>
-  <script src="<?php echo BASE_URL ?>plugin/toastr/validateRegister.js"></script>
+  <script src="<?php echo BASE_URL ?>plugin/toastr/toastr.min.js"></script>
+  <script src="<?php echo BASE_URL ?>plugin/toastr/validateLogin.js"></script>
 
 </body>
 

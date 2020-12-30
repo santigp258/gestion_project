@@ -12,20 +12,21 @@ if (!empty($_POST['loginSubmit'])) {
     if (strlen(trim($usernameEmail)) > 1 && strlen(trim($password)) > 1) {
         $uid = $userClass->userLogin($usernameEmail, $password);
         if ($uid) {
-            $url = BASE_URL . 'login/home.php';
-            header("Location: $url"); // Page redirecting to home.php 
+            echo "done";
+            /* $url = BASE_URL . 'login/home.php';
+            header("Location: $url"); */ // Page redirecting to home.php 
         } else {
-           echo $errorMsgLogin = "Please check login details.";
+           echo "error";
         }
     }
 }
 
-/* Signup Form */
-if (!empty($_POST['signupSubmit'])) {
+ /* Signup Form */
+/* if (!empty($_POST['signupSubmit'])) {
     $username = $_POST['usernameReg'];
     $email = $_POST['emailReg'];
     $password = $_POST['passwordReg'];
-    /* Regular expression check */
+     Regular expression check 
     $username_check = preg_match('~^[A-Za-z0-9_]{3,20}$~i', $username);
     $email_check = preg_match('~^[a-zA-Z0-9_\-\.]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$~i', $email);
     $password_check = preg_match('~^[A-Za-z0-9!@#$%^&*()_]{6,20}$~i', $password);
@@ -39,8 +40,5 @@ if (!empty($_POST['signupSubmit'])) {
             echo $errorMsgReg = "username or Email already exists.";
         }
     }
-}
+}  */
 ?>
-
-
-<pre><?php var_dump($_POST) ?></pre>
