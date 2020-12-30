@@ -1,6 +1,8 @@
-toastr["success"]("¡Se ha completa su registro exitosamente!")
+$(document).ready(function () {
+  toastr["success"]("¡Se ha completado su registro exitosamente!");
 
-toastr.options = {
-  closeButton: true,
-  progressBar: true,
-};
+  toastr.options = {
+    closeButton: true,
+    progressBar: true,
+  };
+});
