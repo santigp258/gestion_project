@@ -58,7 +58,7 @@ include('./includes/config.php');
   </div>
   <script src="<?php echo BASE_URL ?>js/jquery.js"></script>
   <script src="<?php echo BASE_URL ?>js/main.js"></script>
-  <script src="<?php echo BASE_URL ?>plugin/toastr.min.js"></script>
+  <script src="<?php echo BASE_URL ?>plugin/toastr/validateRegister.js"></script>
 
 </body>
 
