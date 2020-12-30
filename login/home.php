@@ -23,7 +23,7 @@
 <body>
 
   <!-- Add your site or application content here -->
-  <?php 
+  <?php
   include('./session.php');
   //include('../includes/config.php');
   $userDetails = $userClass->userDetails($session_uid);

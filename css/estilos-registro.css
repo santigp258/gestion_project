@@ -82,7 +82,7 @@ input[type="submit"]:hover {
 input[type="submit"] {
   width: 100%;
   height: 50px;
-  margin-top: 20px;  
+  margin-top: 20px;
   color: white;
   border: 0px;
   background: linear-gradient(90deg, #bf4222, #e30f87);

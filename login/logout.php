@@ -2,7 +2,7 @@
 
 session_start();
 session_destroy();
-$url='../index.php';
+$url = '../index.php';
 header("Location: $url");
 /* $session_uid='';
 $_SESSION['uid']=''; 

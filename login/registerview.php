@@ -20,8 +20,8 @@ include('../includes/config.php');
 
   <link rel="stylesheet" href="<?php echo BASE_URL ?>css/normalize.css">
   <link rel="stylesheet" href="<?php echo BASE_URL ?>css/registro.css">
-   <link rel="stylesheet" href="<?php echo BASE_URL ?>plugin/toastr/toastr.min.css">
-   <script src="<?php echo BASE_URL ?>js/jquery.js"></script>
+  <link rel="stylesheet" href="<?php echo BASE_URL ?>plugin/toastr/toastr.min.css">
+  <script src="<?php echo BASE_URL ?>js/jquery.js"></script>
 
   <meta name="theme-color" content="#fafafa">
 </head>
@@ -31,7 +31,7 @@ include('../includes/config.php');
     <div class="ctn-form">
       <img src="<?php echo BASE_URL ?>img/logo.png" alt="logo" class="logo">
       <h1 class="title">Registro</h1>
-      <form action="<?php echo BASE_URL?>login/registerValidation.php" method="POST" name="signup">
+      <form action="<?php echo BASE_URL ?>login/registerValidation.php" method="POST" name="signup">
         <!-- User -->
         <label for="usernameReg">Usuario</label>
         <input type="text" name="usernameReg" id="usernameReg" autocomplete="off" autofocus>
