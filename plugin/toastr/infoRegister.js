@@ -1,4 +1,4 @@
-toastr["success"]("Será redireccionado en unos momentos a la página principal.", "¡Se ha completa su registro exitosamente!")
+toastr["success"]("¡Se ha completa su registro exitosamente!")
 
 toastr.options = {
   "closeButton": true,
