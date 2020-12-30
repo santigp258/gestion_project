@@ -75,7 +75,7 @@ $(document).ready(function () {
       if (fields.usernameReg == false) {
         let message =
         "Verifique que esté ingresando caracteres validos. También debe contener de 3 a 20 caracteres.";
-        let title = '¡Campo "usuario" incorrecto!';
+        let title = '¡Campo usuario incorrecto!';
         toastr["error"](message, title);
         toastr.options = {
           closeButton: true,
@@ -85,7 +85,7 @@ $(document).ready(function () {
       } else if (fields.emailReg == false) {
         let message =
         "Verifique que esté ingresando caracteres validos. Este campo debe ser de tipo email.";
-        let title = '¡Campo "email" incorrecto!';
+        let title = '¡Campo email incorrecto!';
         toastr["error"](message, title);
         toastr.options = {
           closeButton: true,
@@ -95,7 +95,7 @@ $(document).ready(function () {
       }else if (fields.passwordReg == false) {
         let message =
           "Verifique que esté ingresando caracteres validos. Puede ingresar caracteres alfanumericos y simbolos. También debe contener de 6 a 20 caracteres.";
-        let title = '¡Campo "contraseña" incorrecto!';
+        let title = '¡Campo contraseña incorrecto!';
         toastr["error"](message, title);
         toastr.options = {
           closeButton: true,
