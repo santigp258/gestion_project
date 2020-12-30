@@ -41,7 +41,23 @@ $(document).ready(function () {
 
   $("form").submit(function (e) {
     if (fields.usernameReg && fields.emailReg && fields.passwordReg) {
+      let username = inputObj[0].value;
+      let email = inputObj[1].value;
+      let password = inputObj[2].value;
+      $.ajax({
+        type: 'post',
+        url: 'http://localhost/gestion_proyect/login/registerValidation.php',
+        data: {
+          usernameReg: username, 
+          emailReg: email,
+          passwordReg: password,
+          signupSubmit: ' '
+        },
+      }).done(function(resp){
+        $(document.body).append(resp);
+      })
       return true;
+  
     } else {
       if (fields.usernameReg == false) {
         let message =

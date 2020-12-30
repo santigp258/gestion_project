@@ -42,3 +42,5 @@ if (!empty($_POST['signupSubmit'])) {
 }
 ?>
 
+
+<pre><?php var_dump($_POST) ?></pre>
