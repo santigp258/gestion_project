@@ -1,4 +1,6 @@
 $(document).ready(function () {
+  //Change important
+  var baseURL = 'http://localhost/gestion_proyect/';
   var inputObj = $("form input");
   const input = [inputObj[0], inputObj[1], inputObj[2]]
   const expressions = {
@@ -55,10 +57,15 @@ $(document).ready(function () {
         },
       }).done(function(resp){
           if(resp === 'error'){
-            var error  = "<script src='http://localhost/gestion_proyect/plugin/toastr/errorRegister.js'></script>";
+            var error  = "<script src='" + baseURL +"plugin/toastr/errorRegister.js'></script>";
             $(document.body).append(error);
           }else{
-            window.location.replace('http://localhost/gestion_proyect/login/home.php');
+             var success  = "<script src='" + baseURL +"plugin/toastr/infoRegister.js'></script>";
+             $(document.body).append(success);
+             setTimeout(()=>{
+              window.location.replace( baseURL + "login/home.php");
+             }, 3000);
+           
           }
         
       })
