@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 02-01-2021 a las 13:10:23
+-- Tiempo de generación: 02-01-2021 a las 14:50:50
 -- Versión del servidor: 10.4.14-MariaDB
 -- Versión de PHP: 7.2.34
 
@@ -37,7 +37,6 @@ CREATE TABLE `afiliaciones` (
   `ciudad` varchar(25) NOT NULL,
   `email` varchar(50) NOT NULL,
   `f_afiliacion` date NOT NULL,
-  `accion` varchar(30) NOT NULL,
   `id_users` int(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -45,12 +44,8 @@ CREATE TABLE `afiliaciones` (
 -- Volcado de datos para la tabla `afiliaciones`
 --
 
-INSERT INTO `afiliaciones` (`id`, `nombre`, `cedula`, `telefono`, `ciudad`, `email`, `f_afiliacion`, `accion`, `id_users`) VALUES
-(1, 'Emanuel perez xd', '0000000', '31030303', 'Obando', 'santiago@gmail.com', '2021-01-18', 'xdd', 1),
-(2, 'clark kan emanjuel', '23233223', '31034949', 'santiago', 'samsmsm@gmail.com', '2021-01-26', 'xdd', 2),
-(3, 'Sara Valentina', '10002929', '3218825708', 'obando', 'santiaog@mail.ocm', '2021-01-20', 'lol', 1),
-(4, 'Sara Valentina', '10002929', '3218825708', 'obando', 'santiaog@mail.ocm', '2021-01-20', 'lol', 1),
-(5, 'daniel villad', '1212012020', '312929', 'manizales', 'manizales@gmail.com', '2021-01-20', 'nose', 2);
+INSERT INTO `afiliaciones` (`id`, `nombre`, `cedula`, `telefono`, `ciudad`, `email`, `f_afiliacion`, `id_users`) VALUES
+(1, 'Daniel villad', '10020929', '3320230230', 'los angeles', 'daniel@gmail.com', '2021-01-14', 1);
 
 -- --------------------------------------------------------
 
@@ -72,8 +67,8 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`uid`, `username`, `password`, `email`, `created_At`, `updated_At`) VALUES
-(1, 'santigp258', 'e8eb3645182a31ff8494fc1005a31f61c6e31063e582d128c13f6b8ad35cf15a', 'santigp258@gmail.com', '2020-12-30 23:09:19', '2020-12-30 23:09:19'),
-(2, 'santigp', 'e8eb3645182a31ff8494fc1005a31f61c6e31063e582d128c13f6b8ad35cf15a', 'santiago@gmil.com', '2021-01-02 05:49:56', '2021-01-02 05:49:56');
+(1, 'Daniel', '8d969eef6ecad3c29a3a629280e686cf0c3f5d5a86aff3ca12020c923adc6c92', 'santiago@gmail.com', '2021-01-02 13:04:11', '2021-01-02 13:04:11'),
+(2, 'santigp258', 'e8eb3645182a31ff8494fc1005a31f61c6e31063e582d128c13f6b8ad35cf15a', 'santigp258@gmail.com', '2021-01-02 13:20:27', '2021-01-02 13:20:27');
 
 --
 -- Índices para tablas volcadas
@@ -101,7 +96,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT de la tabla `afiliaciones`
 --
 ALTER TABLE `afiliaciones`
-  MODIFY `id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de la tabla `users`
