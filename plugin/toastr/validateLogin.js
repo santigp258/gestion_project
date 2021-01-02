@@ -54,7 +54,7 @@ $(document).ready(function () {
             "<script src='" + baseURL + "plugin/toastr/infoLogin.js'></script>";
           $(document.body).append(success);
           setTimeout(() => {
-            window.location.replace(baseURL + "login/home.php");
+            window.location.replace(baseURL + "login/dashboard.php");
           }, 2000);
         } else {
           var error =
