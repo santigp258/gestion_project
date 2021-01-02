@@ -51,9 +51,6 @@ include('../includes/config.php');
         <a href="index.php" class="d-block text-light p-3"><i class="icon ion-ios-log-out mr-2 lead"></i>
           Cerrar Sesión</a>
       </div>
-      <div class="text-footer">
-        <p class="copyright">© Todos los Derechos Reservados</p>
-      </div>
     </div>
 
     <!-- Administrar Afiliaciones -->

@@ -71,16 +71,6 @@ nav {
   font-size: 22px;
 }
 
-.text-footer {
-  margin-top: 14rem;
-}
-
-.copyright {
-  color: var(--light);
-  text-align: center;
-  padding: 5px;
-}
-
 .content {
   overflow-y: auto;
   height: 100vh;
