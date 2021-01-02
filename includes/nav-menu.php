@@ -1,4 +1,4 @@
-
+<?php include('../login/session.php') ?>
   <!-- Barra de Navegacion -->
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <a class="navbar-brand font-weight-bold" href="#">MP DASHBOARD</a>
