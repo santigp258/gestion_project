@@ -1,0 +1,108 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900");
+
+:root {
+  --primary: #2752c9;
+  --gray: #212121;
+  --background: #edf1f5;
+  --grayLight: #b4b0b0;
+  --light: #ffffff;
+}
+
+body {
+  overflow: hidden;
+  font-family: "Roboto" sans-serif;
+  font-weight: 300;
+}
+a:hover {
+  text-decoration: none;
+}
+a .nav-link {
+  padding: 1px;
+}
+.bg-light {
+  background-color: var(--primary) !important;
+}
+
+.navbar-light .navbar-brand {
+  color: var(--light);
+}
+
+.navbar-light .navbar-brand:hover {
+  color: var(--light);
+}
+
+.navbar-light .navbar-nav .nav-link {
+  color: var(--light);
+}
+
+.navbar-light .navbar-nav .nav-link:hover {
+  color: var(--light);
+}
+nav {
+  box-shadow: 0 2px 6px var(--gray);
+}
+
+.perfil {
+  max-width: 45px;
+  height: 45px;
+  border-radius: 50%;
+}
+
+#sidebar-container {
+  min-height: 100vh;
+  background-color: var(--gray);
+}
+
+#sidebar-container .menu {
+  width: 18rem;
+}
+
+.title-menu h4 {
+  text-align: center;
+  font-size: 20px;
+  color: var(--light);
+}
+
+.menu a {
+  font-size: 20px;
+}
+
+.menu i {
+  font-size: 22px;
+}
+
+.text-footer {
+  margin-top: 14rem;
+}
+
+.copyright {
+  color: var(--light);
+  text-align: center;
+  padding: 5px;
+}
+
+.content {
+  overflow-y: auto;
+  height: 100vh;
+  padding-bottom: 5rem;
+  background-color: var(--background);
+}
+
+.title-admin {
+  font-size: 30px;
+  color: var(--gray);
+  margin: 15px 10px;
+}
+
+.subtitle-admin {
+  margin: 5px 10px;
+}
+.header {
+  background: var(--light);
+  padding-bottom: 5px;
+  box-shadow: 0 2px 6px #999;
+}
+
+.bienvenidad {
+  overflow: hidden;
+}
