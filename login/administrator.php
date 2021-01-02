@@ -22,7 +22,7 @@ function showInformation($uid)
     try {
         $db = getDB();
         $stmt = $db->prepare("SELECT * FROM afiliaciones WHERE id_users=:uid");
-        $stmt->bindParam("uid", $uid, PDO::PARAM_STR);
+        $stmt->bindParam("uid", $uid, PDO::PARAM_INT);
         $stmt->execute();
         $data = $stmt->fetchAll(PDO::FETCH_OBJ); //User data
         return $data;
@@ -74,7 +74,7 @@ $information = showInformation($session_uid);
                   $count = 1;
                    foreach($information as $info){ ?>
                     <tr>
-                      <th scope="row"><?php echo $info->id ?></th>
+                      <th scope="row"><?php echo $count ?></th>
                       <td><?php echo $info->nombre ?></td>
                       <td><?php echo $info->cedula ?></td>
                       <td><?php echo $info->telefono ?></td>
