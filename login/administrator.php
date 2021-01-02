@@ -1,3 +1,6 @@
+<?php
+include('../includes/config.php');
+?>
 <!doctype html>
 <html lang="es">
 
@@ -9,7 +12,7 @@
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
     integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-  <link rel="stylesheet" href="css/dashboard.css">
+  <link rel="stylesheet" href="<?php echo BASE_URL ?>css/dashboard.css">
   <link href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css" rel="stylesheet">
   <title>MP - Administrar Afiliaciones</title>
 </head>
@@ -22,7 +25,8 @@
     <div class="container">
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav ml-auto">
-          <img class="img-fluid float-right perfil ml-2" src="img/perfil.jpg" alt="foto de perfil">
+          <img class="img-fluid float-right perfil ml-2" src="<?php echo BASE_URL ?>img/perfil.jpg"
+            alt="foto de perfil">
           <li class="nav-item">
             <a class="nav-link" href="#">Administrador</a>
           </li>
