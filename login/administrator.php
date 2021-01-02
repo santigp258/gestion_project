@@ -13,7 +13,7 @@
   <link href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css" rel="stylesheet">
   <title>MP - Administrar Afiliaciones</title>
 </head>
-
+<body>
 <?php include_once('../includes/nav-menu.php') ?>
 <?php
 function showInformation($uid)
@@ -69,7 +69,9 @@ $information = showInformation($session_uid);
                   </tr>
                 </thead>
                 <tbody>
-                  <?php foreach($information as $info){ ?>
+                  <?php
+                  $count = 1;
+                   foreach($information as $info){ ?>
                   <tr>
                     <th scope="row"><?php echo $info->id ?></th>
                     <td><?php echo $info->nombre ?></td>
@@ -80,7 +82,9 @@ $information = showInformation($session_uid);
                     <td><?php echo $info->f_afiliacion ?></td>
                     <td><?php echo $info->accion ?></td>
                   </tr>
-                  <?php }?>
+                  <?php 
+                  $count = $count + 1;
+                }?>
                 </tbody>
               </table>
             </div>
