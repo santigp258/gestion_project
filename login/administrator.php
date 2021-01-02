@@ -55,8 +55,8 @@ $information = showInformation($session_uid);
           <div class="col-lg-12">
             <div class="card rouded-0 mt-5">
               <!-- Inicio de Tabla -->
-              <div class="table-responsive mt-3">
-                <table class="table">
+              <div class="table-responsive">
+                <table class=" table table-hover">
                   <thead>
                     <tr>
                       <th scope="col">ID</th>
@@ -82,9 +82,9 @@ $information = showInformation($session_uid);
                       <td><?php echo $info->email ?></td>
                       <td><?php echo $info->f_afiliacion ?></td>
                       <td>
-                        <a href="#"><span class='icon ion-md-eye' style="color:var(--primary)"></span></a>
-                        <a href="#"><span class='icon ion-md-create' style="color:var(--orange)"></span></a>
-                        <a href="#"><span class='icon ion-md-trash' style="color:var(--red);"></span></a>
+                        <a href="#"><span class='icon ion-md-eye lead' style="color:var(--primary)"></span></a>
+                        <a href="#"><span class='icon ion-md-create lead' style="color:var(--orange)"></span></a>
+                        <a href="#"><span class='icon ion-md-trash lead' style="color:var(--red);"></span></a>
                       </td>
                     </tr>
                     <?php 
@@ -93,6 +93,27 @@ $information = showInformation($session_uid);
                   </tbody>
                 </table>
               </div>
+              <!-- Pagination -->
+              <div class="pagination p-0 m-auto">
+                <ul class="pagination">
+                  <li class="page-item">
+                    <a class="page-link" href="#" aria-label="Previous">
+                      <span aria-hidden="true">&laquo;</span>
+                      <span class="sr-only">Previous</span>
+                    </a>
+                  </li>
+                  <li class="page-item"><a class="page-link" href="#">1</a></li>
+                  <li class="page-item"><a class="page-link" href="#">2</a></li>
+                  <li class="page-item"><a class="page-link" href="#">3</a></li>
+                  <li class="page-item">
+                    <a class="page-link" href="#" aria-label="Next">
+                      <span aria-hidden="true">&raquo;</span>
+                      <span class="sr-only">Next</span>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+              <!-- Pagination end -->
             </div>
           </div>
         </div>
