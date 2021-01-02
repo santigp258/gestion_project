@@ -1,8 +1,8 @@
 <?php
-
+include('../includes/config.php');
 session_start();
 session_destroy();
-$url = '../index.php';
+$url = BASE_URL . 'index.php';
 header("Location: $url");
 // /* $session_uid='';
 // $_SESSION['uid']=''; 
