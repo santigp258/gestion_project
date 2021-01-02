@@ -55,7 +55,7 @@ include('../includes/config.php');
 
     <!-- Administrar Afiliaciones -->
     <div class="content  bienvenidad w-100">
-      <img src="<?php echo BASE_URL ?>img/home.jpg" alt="background">
+      <img src="<?php echo BASE_URL ?>img/home.svg" alt="background">
     </div> <!-- End Administrar Afiliaciones -->
 
   </div><!-- End Menu Lateral -->

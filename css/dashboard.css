@@ -96,3 +96,9 @@ nav {
 .bienvenidad {
   overflow: hidden;
 }
+
+.bienvenidad img {
+  display: block;
+  margin: auto;
+  padding: 80px;
+}
