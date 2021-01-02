@@ -1,4 +1,7 @@
-<?php include('../login/session.php') ?>
+<?php include('../login/session.php');
+
+$userDetails = $userClass->userDetails($session_uid);
+?>
 <!-- Barra de Navegacion -->
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <a class="navbar-brand font-weight-bold" href="#">MP DASHBOARD</a>
@@ -10,7 +13,7 @@
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle text-light" href="#" id="navbarDropdown" role="button"
               data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Administrador
+             <?php echo $userDetails->username ?>
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
               <a class="dropdown-item" href="#">Mi Perfil</a>
