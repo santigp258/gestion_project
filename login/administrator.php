@@ -17,12 +17,14 @@
 <body>
   <?php include_once('../includes/nav-menu.php') ?>
   <?php
-  function showInformation($uid)
+  function showInformation($uid, $index, $pagination) //uid/ dinamic index / total afilitions
   {
     try {
       $db = getDB();
-      $stmt = $db->prepare("SELECT * FROM afiliaciones WHERE id_users=:uid");
+      $stmt = $db->prepare("SELECT * FROM afiliaciones WHERE id_users=:uid LIMIT :index, :pagination");
       $stmt->bindParam("uid", $uid, PDO::PARAM_INT);
+      $stmt->bindParam("index", $index, PDO::PARAM_INT);
+      $stmt->bindParam("pagination", $pagination, PDO::PARAM_INT);
       $stmt->execute();
       $data = $stmt->fetchAll(PDO::FETCH_OBJ); //User data
       return $data;
@@ -31,7 +33,6 @@
     }
   }
 
-  $information = showInformation($session_uid);
 
   //pagination
  $uid = $session_uid ;
@@ -42,10 +43,25 @@
   $data = $stmt->fetchAll(PDO::FETCH_OBJ); //User data
 
   //count 
-  $pagination = 4;
+  $pagination = 4; //data for page
   $total_register_db = $stmt->rowCount();
   $round = $total_register_db/4; //calculate
   $pages = ceil($round); //round
+
+  //default page
+  if(!$_GET){
+    $url = BASE_URL . 'login/administrator.php?page=1';
+    header("Location: $url");
+  }
+  //redirect if pagination doesn't exists
+  if($_GET['page'] > $pages || $_GET['page'] < 1){
+    $url = BASE_URL . 'login/administrator.php?page=1';
+    header("Location: $url");
+  }
+
+  $index = ($_GET['page']-1)* $pagination;
+
+  $information = showInformation($session_uid, $index, $pagination);
   ?>
 
 
@@ -85,10 +101,9 @@
                   </thead>
                   <tbody>
                     <?php
-                    $count = 1;
                     foreach ($information as $info) { ?>
                       <tr>
-                        <th scope="row"><?php echo $count ?></th>
+                        <th scope="row"><?php echo $info->id ?></th>
                         <td><?php echo $info->nombre ?></td>
                         <td><?php echo $info->cedula ?></td>
                         <td><?php echo $info->telefono ?></td>
@@ -102,7 +117,6 @@
                         </td>
                       </tr>
                     <?php
-                      $count = $count + 1;
                     } ?>
                   </tbody>
                 </table>
@@ -110,21 +124,22 @@
               <!-- Pagination -->
               <div class="pagination p-0 m-auto">
                 <ul class="pagination">
-                  <li class="page-item">
-                    <a class="page-link" href="#" aria-label="Previous">
+                  <li class="page-item <?php echo $_GET['page'] <= 1 ? 'disabled' : '' ?>">
+                    <a class="page-link" href="<?php echo BASE_URL ?>login/administrator.php?page=<?php echo $_GET['page'] - 1 ?>" aria-label="Previous">
                       <span aria-hidden="true">&laquo;</span>
                       <span class="sr-only">Previous</span>
                     </a>
                   </li>
-                  <li class="page-item"><a class="page-link" href="#">1</a></li>
-                  <li class="page-item"><a class="page-link" href="#">2</a></li>
-                  <li class="page-item"><a class="page-link" href="#">3</a></li>
-                  <li class="page-item">
-                    <a class="page-link" href="#" aria-label="Next">
+                  <?php for ($i=0; $i < $pages; $i++){ ?>
+                  <li class="page-item
+                  <?php echo $_GET['page'] == $i + 1 ? 'active' : '' ?>"><a class="page-link" href="<?php echo BASE_URL ?>login/administrator.php?page=<?php echo $i + 1; ?>"><?php echo $i + 1; ?></a></li>
+                  <?php }?>   
+                    <a class="page-link" <?php echo $_GET['page'] >= $pages ? 'disabled' : '' ?>href="<?php echo BASE_URL ?>login/administrator.php?page=<?php echo $_GET['page'] + 1 ?>" aria-label="Next">
                       <span aria-hidden="true">&raquo;</span>
-                      <span class="sr-only">Next</span>
+                      <span class="sr-only ">Next</span>
                     </a>
                   </li>
+                 
                 </ul>
               </div>
               <!-- Pagination end -->
