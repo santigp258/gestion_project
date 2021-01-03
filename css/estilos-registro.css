@@ -51,34 +51,6 @@ label {
   color: #7a7a7a;
 }
 
-/*  input[type="text"],
-input[type="email"],
-input[type="password"] {
-  width: 100%;
-  height: 30px;
-  background: rgba(0, 0, 0, 0);
-  border: 0px;
-  outline: 0px;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.12);
-  color: #7a7a7a;
-  font-size: 16px;
-}
-  */
-/* input[type="submit"] {
-  width: 100%;
-  height: 50px;
-   margin-top: 20px;  
-  color: white;
-  border: 0px;
-  background: linear-gradient(90deg, #bf4222, #e30f87);
-  font-weight: 300;
-  cursor: pointer;
-  font-size: 18px;
-}
-input[type="submit"]:hover {
-  background: linear-gradient(90deg, #e30f87, #bf4222);
-} */
-
 input[type="submit"] {
   width: 100%;
   height: 50px;

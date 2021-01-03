@@ -13,10 +13,10 @@ $userDetails = $userClass->userDetails($session_uid);
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle text-light" href="#" id="navbarDropdown" role="button"
               data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-             <?php echo $userDetails->username ?>
+              <?php echo $userDetails->username ?>
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="#">Mi Perfil</a>
+              <a class="dropdown-item" href="profile.php">Mi Perfil</a>
           </li>
         </div>
         <!-- <li class="nav-item">
