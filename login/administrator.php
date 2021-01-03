@@ -17,22 +17,52 @@
 <body>
   <?php include_once('../includes/nav-menu.php') ?>
   <?php
-function showInformation($uid)
-{
+  function showInformation($uid, $index, $pagination) //uid/ dinamic index / total afilitions
+  {
     try {
-        $db = getDB();
-        $stmt = $db->prepare("SELECT * FROM afiliaciones WHERE id_users=:uid");
-        $stmt->bindParam("uid", $uid, PDO::PARAM_INT);
-        $stmt->execute();
-        $data = $stmt->fetchAll(PDO::FETCH_OBJ); //User data
-        return $data;
+      $db = getDB();
+      $stmt = $db->prepare("SELECT * FROM afiliaciones WHERE id_users=:uid LIMIT :index, :pagination");
+      $stmt->bindParam("uid", $uid, PDO::PARAM_INT);
+      $stmt->bindParam("index", $index, PDO::PARAM_INT);
+      $stmt->bindParam("pagination", $pagination, PDO::PARAM_INT);
+      $stmt->execute();
+      $data = $stmt->fetchAll(PDO::FETCH_OBJ); //User data
+      return $data;
     } catch (PDOException $e) {
-        echo '{"error":{"text":' . $e->getMessage() . '}}';
+      echo '{"error":{"text":' . $e->getMessage() . '}}';
     }
-}
+  }
 
-$information = showInformation($session_uid);
-?>
+
+  //pagination
+ $uid = $session_uid ;
+  $db = getDB();
+  $stmt = $db->prepare("SELECT * FROM afiliaciones WHERE id_users=:uid");
+  $stmt->bindParam("uid", $uid, PDO::PARAM_INT);
+  $stmt->execute();
+  $data = $stmt->fetchAll(PDO::FETCH_OBJ); //User data
+
+  //count 
+  $pagination = 4; //data for page
+  $total_register_db = $stmt->rowCount();
+  $round = $total_register_db/4; //calculate
+  $pages = ceil($round); //round
+
+  //default page
+  if(!$_GET){
+    $url = BASE_URL . 'login/administrator.php?page=1';
+    header("Location: $url");
+  }
+  //redirect if pagination doesn't exists
+  if($_GET['page'] > $pages || $_GET['page'] < 1){
+    $url = BASE_URL . 'login/administrator.php?page=1';
+    header("Location: $url");
+  }
+
+  $index = ($_GET['page']-1)* $pagination;
+
+  $information = showInformation($session_uid, $index, $pagination);
+  ?>
 
 
   <!-- Administrar Afiliaciones -->
@@ -89,46 +119,45 @@ $information = showInformation($session_uid);
                   </thead>
                   <tbody>
                     <?php
-                  $count = 1;
-                   foreach($information as $info){ ?>
-                    <tr>
-                      <th scope="row"><?php echo $count ?></th>
-                      <td><?php echo $info->nombre ?></td>
-                      <td><?php echo $info->cedula ?></td>
-                      <td><?php echo $info->telefono ?></td>
-                      <td><?php echo $info->ciudad ?></td>
-                      <td><?php echo $info->email ?></td>
-                      <td><?php echo $info->f_afiliacion ?></td>
-                      <td>
-                        <a href="#"><span class='icon ion-md-eye lead' style="color:var(--primary)"></span></a>
-                        <a href="#"><span class='icon ion-md-create lead' style="color:var(--orange)"></span></a>
-                        <a href="#"><span class='icon ion-md-trash lead' style="color:var(--red);"></span></a>
-                      </td>
-                    </tr>
-                    <?php 
-                  $count = $count + 1;
-                }?>
+                    foreach ($information as $info) { ?>
+                      <tr>
+                        <th scope="row"><?php echo $info->id ?></th>
+                        <td><?php echo $info->nombre ?></td>
+                        <td><?php echo $info->cedula ?></td>
+                        <td><?php echo $info->telefono ?></td>
+                        <td><?php echo $info->ciudad ?></td>
+                        <td><?php echo $info->email ?></td>
+                        <td><?php echo $info->f_afiliacion ?></td>
+                        <td>
+                          <a href="#"><span class='icon ion-md-eye lead' style="color:var(--primary)"></span></a>
+                          <a href="#"><span class='icon ion-md-create lead' style="color:var(--orange)"></span></a>
+                          <a href="#"><span class='icon ion-md-trash lead' style="color:var(--red);"></span></a>
+                        </td>
+                      </tr>
+                    <?php
+                    } ?>
                   </tbody>
                 </table>
               </div>
               <!-- Pagination -->
               <div class="pagination p-0 m-auto">
                 <ul class="pagination">
-                  <li class="page-item">
-                    <a class="page-link" href="#" aria-label="Previous">
+                  <li class="page-item <?php echo $_GET['page'] <= 1 ? 'disabled' : '' ?>">
+                    <a class="page-link" href="<?php echo BASE_URL ?>login/administrator.php?page=<?php echo $_GET['page'] - 1 ?>" aria-label="Previous">
                       <span aria-hidden="true">&laquo;</span>
                       <span class="sr-only">Previous</span>
                     </a>
                   </li>
-                  <li class="page-item"><a class="page-link" href="#">1</a></li>
-                  <li class="page-item"><a class="page-link" href="#">2</a></li>
-                  <li class="page-item"><a class="page-link" href="#">3</a></li>
-                  <li class="page-item">
-                    <a class="page-link" href="#" aria-label="Next">
+                  <?php for ($i=0; $i < $pages; $i++){ ?>
+                  <li class="page-item
+                  <?php echo $_GET['page'] == $i + 1 ? 'active' : '' ?>"><a class="page-link" href="<?php echo BASE_URL ?>login/administrator.php?page=<?php echo $i + 1; ?>"><?php echo $i + 1; ?></a></li>
+                  <?php }?>   
+                    <a class="page-link" <?php echo $_GET['page'] >= $pages ? 'disabled' : '' ?>href="<?php echo BASE_URL ?>login/administrator.php?page=<?php echo $_GET['page'] + 1 ?>" aria-label="Next">
                       <span aria-hidden="true">&raquo;</span>
-                      <span class="sr-only">Next</span>
+                      <span class="sr-only ">Next</span>
                     </a>
                   </li>
+                 
                 </ul>
               </div>
               <!-- Pagination end -->
