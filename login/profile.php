@@ -17,7 +17,7 @@
 <body>
   <?php include_once('../includes/nav-menu.php') ?>
 
-  <!-- Editar Perfil -->
+  <!-- Encabezado Editar Perfil -->
   <div class="content w-100">
     <section>
       <div class="container header">
@@ -29,11 +29,60 @@
         </div>
       </div>
     </section>
-    <!-- Editar Perfil -->
+    <!-- Encabezado Editar Perfil -->
 
-    <!-- Comienzo Perfil -->
-
-    <!-- Fin de Perfil -->
+    <!-- Comienzo Formulario Perfil -->
+    <section>
+      <div class="container my-3 ">
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="card rouded-0 mt-4">
+              <div class="container mt-3">
+                <form>
+                  <!-- Nombre y cedula -->
+                  <div class="form-row">
+                    <div class="form-group col-md-6">
+                      <label for="inputName4">Nombre</label>
+                      <input type="text" class="form-control" id="inputName4" placeholder="Nombre">
+                    </div>
+                    <div class="form-group col-md-6">
+                      <label for="inputCedula4">Cedula</label>
+                      <input type="text" class="form-control" id="inputCedula4" placeholder="Cedula">
+                    </div>
+                  </div>
+                  <!-- Telefono Ciudad -->
+                  <div class="form-row">
+                    <div class="form-group col-md-6">
+                      <label for="inputTelefono4">Telefono</label>
+                      <input type="text" class="form-control" id="inputTelefono4" placeholder="Telefono">
+                    </div>
+                    <div class="form-group col-md-6">
+                      <label for="inputCiudad4">Ciudad</label>
+                      <input type="text" class="form-control" id="inputCiudad4" placeholder="Ciudad">
+                    </div>
+                  </div>
+                  <!-- Correo Afiliacion -->
+                  <div class="form-row">
+                    <div class="form-group col-md-6">
+                      <label for="inputCorreo4">Correo</label>
+                      <input type="email" class="form-control" id="inputCorreo4" placeholder="Correo">
+                    </div>
+                    <div class="form-group col-md-6">
+                      <label for="inputFecha4">Fecha de Afiliación</label>
+                      <input type="date" class="form-control" id="inputFecha4">
+                    </div>
+                  </div>
+                </form>
+                <!-- Botones Guardar y Cancelar -->
+                <button type="submit" class="btn btn-primary mb-3">Actualizar</button>
+                <a href="administrator.php"><button type="submit" class="btn btn-danger mb-3">Cancelar</button></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Fin de Formulario Perfil -->
   </div>
 
 </body>
