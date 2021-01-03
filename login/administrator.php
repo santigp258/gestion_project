@@ -17,22 +17,36 @@
 <body>
   <?php include_once('../includes/nav-menu.php') ?>
   <?php
-function showInformation($uid)
-{
+  function showInformation($uid)
+  {
     try {
-        $db = getDB();
-        $stmt = $db->prepare("SELECT * FROM afiliaciones WHERE id_users=:uid");
-        $stmt->bindParam("uid", $uid, PDO::PARAM_INT);
-        $stmt->execute();
-        $data = $stmt->fetchAll(PDO::FETCH_OBJ); //User data
-        return $data;
+      $db = getDB();
+      $stmt = $db->prepare("SELECT * FROM afiliaciones WHERE id_users=:uid");
+      $stmt->bindParam("uid", $uid, PDO::PARAM_INT);
+      $stmt->execute();
+      $data = $stmt->fetchAll(PDO::FETCH_OBJ); //User data
+      return $data;
     } catch (PDOException $e) {
-        echo '{"error":{"text":' . $e->getMessage() . '}}';
+      echo '{"error":{"text":' . $e->getMessage() . '}}';
     }
-}
+  }
 
-$information = showInformation($session_uid);
-?>
+  $information = showInformation($session_uid);
+
+  //pagination
+ $uid = $session_uid ;
+  $db = getDB();
+  $stmt = $db->prepare("SELECT * FROM afiliaciones WHERE id_users=:uid");
+  $stmt->bindParam("uid", $uid, PDO::PARAM_INT);
+  $stmt->execute();
+  $data = $stmt->fetchAll(PDO::FETCH_OBJ); //User data
+
+  //count 
+  $pagination = 4;
+  $total_register_db = $stmt->rowCount();
+  $round = $total_register_db/4; //calculate
+  $pages = ceil($round); //round
+  ?>
 
 
   <!-- Administrar Afiliaciones -->
@@ -71,25 +85,25 @@ $information = showInformation($session_uid);
                   </thead>
                   <tbody>
                     <?php
-                  $count = 1;
-                   foreach($information as $info){ ?>
-                    <tr>
-                      <th scope="row"><?php echo $count ?></th>
-                      <td><?php echo $info->nombre ?></td>
-                      <td><?php echo $info->cedula ?></td>
-                      <td><?php echo $info->telefono ?></td>
-                      <td><?php echo $info->ciudad ?></td>
-                      <td><?php echo $info->email ?></td>
-                      <td><?php echo $info->f_afiliacion ?></td>
-                      <td>
-                        <a href="#"><span class='icon ion-md-eye lead' style="color:var(--primary)"></span></a>
-                        <a href="#"><span class='icon ion-md-create lead' style="color:var(--orange)"></span></a>
-                        <a href="#"><span class='icon ion-md-trash lead' style="color:var(--red);"></span></a>
-                      </td>
-                    </tr>
-                    <?php 
-                  $count = $count + 1;
-                }?>
+                    $count = 1;
+                    foreach ($information as $info) { ?>
+                      <tr>
+                        <th scope="row"><?php echo $count ?></th>
+                        <td><?php echo $info->nombre ?></td>
+                        <td><?php echo $info->cedula ?></td>
+                        <td><?php echo $info->telefono ?></td>
+                        <td><?php echo $info->ciudad ?></td>
+                        <td><?php echo $info->email ?></td>
+                        <td><?php echo $info->f_afiliacion ?></td>
+                        <td>
+                          <a href="#"><span class='icon ion-md-eye lead' style="color:var(--primary)"></span></a>
+                          <a href="#"><span class='icon ion-md-create lead' style="color:var(--orange)"></span></a>
+                          <a href="#"><span class='icon ion-md-trash lead' style="color:var(--red);"></span></a>
+                        </td>
+                      </tr>
+                    <?php
+                      $count = $count + 1;
+                    } ?>
                   </tbody>
                 </table>
               </div>
