@@ -11,27 +11,27 @@
   <link rel="stylesheet" href="<?php echo BASE_URL ?>css/CDN/bootstrap.min.css">
   <link rel="stylesheet" href="<?php echo BASE_URL ?>css/dashboard.css">
   <link href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css" rel="stylesheet">
-  <title>MP - Crear Afiliación</title>
+  <title>MP - Editar Afiliación</title>
 </head>
 
 <body>
   <?php include_once('../includes/nav-menu.php') ?>
 
-  <!-- Encabezado Crear Afiliacion -->
+  <!-- Encabezado Editar Afiliacion -->
   <div class="content w-100">
     <section>
       <div class="container header">
         <div class="row">
           <div class="col-lg-9">
-            <h1 class="title-admin mb-0">Crear Afiliación</h1>
-            <p class="subtitle-admin lead text-muted">Agregando Nueva Vendedora MP</p>
+            <h1 class="title-admin mb-0">Editar Afiliación</h1>
+            <p class="subtitle-admin lead text-muted">Actualizar Informacion Vendedora MP</p>
           </div>
         </div>
       </div>
     </section>
-    <!-- Encabezado Crear Afiliacion -->
+    <!-- Encabezado Editar Afiliacion -->
 
-    <!-- Comienzo Formulario Crear -->
+    <!-- Comienzo Formulario Editar Afiliacion -->
     <section>
       <div class="container my-3 ">
         <div class="row">
@@ -74,7 +74,7 @@
                   </div>
                 </form>
                 <!-- Botones Guardar y Cancelar -->
-                <button type="submit" class="btn btn-primary mb-3">Guardar</button>
+                <button type="submit" class="btn btn-primary mb-3">Actualizar</button>
                 <a href="administrator.php"><button type="submit" class="btn btn-danger mb-3">Cancelar</button></a>
               </div>
             </div>
@@ -82,7 +82,7 @@
         </div>
       </div>
     </section>
-    <!-- Fin de Formulario Crear -->
+    <!-- Fin de Formulario Editar Afiliacion -->
   </div>
 
 </body>
