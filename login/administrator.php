@@ -94,7 +94,7 @@
                   <!-- Search form -->
                   <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ml-auto">
-                      <a class="icon ion-md-add lead" href="#"><span class="p-2">Crear
+                      <a class="icon ion-md-add lead" href="create.php"><span class="p-2">Crear
                           Afiliacion</span></a>
                     </ul>
                   </div>
@@ -120,20 +120,20 @@
                   <tbody>
                     <?php
                     foreach ($information as $info) { ?>
-                      <tr>
-                        <th scope="row"><?php echo $info->id ?></th>
-                        <td><?php echo $info->nombre ?></td>
-                        <td><?php echo $info->cedula ?></td>
-                        <td><?php echo $info->telefono ?></td>
-                        <td><?php echo $info->ciudad ?></td>
-                        <td><?php echo $info->email ?></td>
-                        <td><?php echo $info->f_afiliacion ?></td>
-                        <td>
-                          <a href="#"><span class='icon ion-md-eye lead' style="color:var(--primary)"></span></a>
-                          <a href="#"><span class='icon ion-md-create lead' style="color:var(--orange)"></span></a>
-                          <a href="#"><span class='icon ion-md-trash lead' style="color:var(--red);"></span></a>
-                        </td>
-                      </tr>
+                    <tr>
+                      <th scope="row"><?php echo $info->id ?></th>
+                      <td><?php echo $info->nombre ?></td>
+                      <td><?php echo $info->cedula ?></td>
+                      <td><?php echo $info->telefono ?></td>
+                      <td><?php echo $info->ciudad ?></td>
+                      <td><?php echo $info->email ?></td>
+                      <td><?php echo $info->f_afiliacion ?></td>
+                      <td>
+                        <a href="#"><span class='icon ion-md-eye lead' style="color:var(--primary)"></span></a>
+                        <a href="#"><span class='icon ion-md-create lead' style="color:var(--orange)"></span></a>
+                        <a href="#"><span class='icon ion-md-trash lead' style="color:var(--red);"></span></a>
+                      </td>
+                    </tr>
                     <?php
                     } ?>
                   </tbody>
@@ -143,21 +143,27 @@
               <div class="pagination p-0 m-auto">
                 <ul class="pagination">
                   <li class="page-item <?php echo $_GET['page'] <= 1 ? 'disabled' : '' ?>">
-                    <a class="page-link" href="<?php echo BASE_URL ?>login/administrator.php?page=<?php echo $_GET['page'] - 1 ?>" aria-label="Previous">
+                    <a class="page-link"
+                      href="<?php echo BASE_URL ?>login/administrator.php?page=<?php echo $_GET['page'] - 1 ?>"
+                      aria-label="Previous">
                       <span aria-hidden="true">&laquo;</span>
                       <span class="sr-only">Previous</span>
                     </a>
                   </li>
                   <?php for ($i=0; $i < $pages; $i++){ ?>
                   <li class="page-item
-                  <?php echo $_GET['page'] == $i + 1 ? 'active' : '' ?>"><a class="page-link" href="<?php echo BASE_URL ?>login/administrator.php?page=<?php echo $i + 1; ?>"><?php echo $i + 1; ?></a></li>
-                  <?php }?>   
-                    <a class="page-link" <?php echo $_GET['page'] >= $pages ? 'disabled' : '' ?>href="<?php echo BASE_URL ?>login/administrator.php?page=<?php echo $_GET['page'] + 1 ?>" aria-label="Next">
-                      <span aria-hidden="true">&raquo;</span>
-                      <span class="sr-only ">Next</span>
-                    </a>
+                  <?php echo $_GET['page'] == $i + 1 ? 'active' : '' ?>"><a class="page-link"
+                      href="<?php echo BASE_URL ?>login/administrator.php?page=<?php echo $i + 1; ?>"><?php echo $i + 1; ?></a>
                   </li>
-                 
+                  <?php }?>
+                  <a class="page-link"
+                    <?php echo $_GET['page'] >= $pages ? 'disabled' : '' ?>href="<?php echo BASE_URL ?>login/administrator.php?page=<?php echo $_GET['page'] + 1 ?>"
+                    aria-label="Next">
+                    <span aria-hidden="true">&raquo;</span>
+                    <span class="sr-only ">Next</span>
+                  </a>
+                  </li>
+
                 </ul>
               </div>
               <!-- Pagination end -->
