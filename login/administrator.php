@@ -70,7 +70,7 @@
 
 
   <!-- Administrar Afiliaciones -->
-  <div class="content w-100">
+  <div class="content w-100" style="overflow: hidden;">
     <section>
       <div class="container header">
         <div class="row">
@@ -170,9 +170,16 @@
                 </div>
               <?php } else { ?>
                 <!-- Bienvenidad -->
-                <div class="bienvenidad">
-                  <img src="<?php echo BASE_URL ?>img/home.svg" alt="background">
-                </div> <!-- End Bienvenidad  -->
+                <div class="bienvenidad" style="text-align: center; margin-top: 50px; overflow: hidden">
+                <a class="icon ion-md-add lead" href="create.php" ><span class="p-2">Crear
+                            Afiliacion</span></a>
+                  <img  style="width: 50%; height: 390px; justify-content: end; padding:20px" src="<?php echo BASE_URL ?>img/home.svg" alt="background">
+                
+                </div> 
+        
+                        
+
+                <!-- End Bienvenidad  -->
 
               <?php } ?>
               <!-- Pagination end -->

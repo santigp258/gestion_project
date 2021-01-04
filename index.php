@@ -1,5 +1,10 @@
 <?php
 include('./includes/config.php');
+//sesion exist redirect to dashboard
+if(!empty($_SESSION['uid'])){
+  $url = BASE_URL . 'login/dashboard.php';
+  header('Location: ' . $url);
+}
 ?>
 <!doctype html>
 <html class="no-js" lang="es">
