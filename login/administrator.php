@@ -61,7 +61,7 @@
 
   $index = ($_GET['page']-1)* $pagination;
 
-  $information = showInformation($session_uid, $index, $pagination);
+  $information = showInformation($session_uid, $index, $pagination); 
   ?>
 
 
@@ -118,7 +118,7 @@
                     </tr>
                   </thead>
                   <tbody id="tbody">
-                    <!-- <?php
+                     <?php
                     foreach ($information as $info) { ?>
                       <tr>
                         <th scope="row"><?php echo $info->id ?></th>
@@ -135,9 +135,8 @@
                         </td>
                       </tr>
                     <?php
-                    } ?>  -->
+                    } ?>  
                   </tbody>
-                  <input id="index" type="hidden" value="<?php echo $index ?>"></input>
                 </table>
               </div>
               <!-- Pagination -->

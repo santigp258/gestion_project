@@ -1,14 +1,12 @@
 <?php 
 class searchClass{
-  public function searchMatches($data, $session_uid, $index, $pagination){
-    if(!empty($data)){
+  public function searchMatches($data, $session_uid){
+    if(isset($data)){
       $data = $data;
       $uid = $session_uid ;
       $db = getDB();
-      $stmt = $db->prepare("SELECT * FROM afiliaciones WHERE id LIKE '%". $data . "%' OR nombre LIKE '%". $data . "%' OR cedula LIKE '%". $data . "%' OR telefono LIKE '%". $data . "%' OR ciudad LIKE '%". $data . "%' OR email LIKE '%". $data . "%' OR f_afiliacion LIKE '%". $data . "%' LIMIT $index, $pagination");
+      $stmt = $db->prepare("SELECT * FROM afiliaciones WHERE id LIKE '%". $data . "%' OR nombre LIKE '%". $data . "%' OR cedula LIKE '%". $data . "%' OR telefono LIKE '%". $data . "%' OR ciudad LIKE '%". $data . "%' OR email LIKE '%". $data . "%' OR f_afiliacion LIKE '%". $data . "%' ");
       $stmt->bindParam("data", $data, PDO::PARAM_STR);
-      $stmt->bindParam("index", $index, PDO::PARAM_INT);
-      $stmt->bindParam("pagination", $pagination, PDO::PARAM_INT);
        $stmt->execute();
       $data = $stmt->fetchAll(PDO::FETCH_ASSOC); //User data
     };
