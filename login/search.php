@@ -2,42 +2,30 @@
 
 include('../includes/config.php');
 include('./session.php');
+include('./searchClass.php');
 
-$message = '';
-if(!empty($_POST['data'])){
-  $data = $_POST['data'];
+
+
+
+
+  //pagination
   $uid = $session_uid ;
   $db = getDB();
-  $stmt = $db->prepare("SELECT * FROM afiliaciones WHERE id_users=:uid AND nombre LIKE '%". $data . "%'");
- $stmt->bindParam("uid", $uid, PDO::PARAM_INT);
- // $stmt->bindParam("data", $data, PDO::PARAM_STR);
+  $data = $_POST['data'];
+  $stmt = $db->prepare("SELECT * FROM afiliaciones WHERE id LIKE '%". $data . "%' OR nombre LIKE '%". $data . "%' OR cedula LIKE '%". $data . "%' OR telefono LIKE '%". $data . "%' OR ciudad LIKE '%". $data . "%' OR email LIKE '%". $data . "%' OR f_afiliacion LIKE '%". $data . "%' ORDER BY nombre");
+  $stmt->bindParam("uid", $uid, PDO::PARAM_INT);
   $stmt->execute();
   $data = $stmt->fetchAll(PDO::FETCH_OBJ); //User data
-};
-if($stmt->rowCount() <= 0){
-  $message = "<p>No hay resultados</p>";
-}else{
-while($datas = $data) { 
-  $message = '<tr>
-  <th scope="row">'.$datas->id.'</th>
-  <td>'.$datas->nombre.'</td>
-  <td>'.$datas->cedula.'</td>
-  <td>'.$datas->telefono.'</td>
-  <td>'.$datas->ciudad.'</td>
-  <td>'.$datas->email.'</td>
-  <td>'.$datas->f_afiliacion.'</td>
-  <td>
-    <a href="#"><span class="icon ion-md-eye lead" style="color:var(--primary)"></span></a>
-    <a href="#"><span class="icon ion-md-create lead" style="color:var(--orange)"></span></a>
-    <a href="#"><span class="icon ion-md-trash lead" style="color:var(--red);"></span></a>
-  </td>
-</tr>';
-}
- /*  */
-}
 
-echo $message;
+  //count 
+  $pagination = 4; //data for page
+  $total_register_db = $stmt->rowCount();
+  $round = $total_register_db/$pagination; //calculate
+  $pages = ceil($round); //round
 
-//html for consult
-?> 
-
+  $index =  $_POST['index']* $pagination;
+  
+  
+  
+  $search = new searchClass();
+   $search->searchMatches($_POST['data'], intVal($session_uid), $index, $pagination);

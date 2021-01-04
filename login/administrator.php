@@ -45,7 +45,7 @@
   //count 
   $pagination = 4; //data for page
   $total_register_db = $stmt->rowCount();
-  $round = $total_register_db/4; //calculate
+  $round = $total_register_db/$pagination; //calculate
   $pages = ceil($round); //round
 
   //default page
@@ -118,7 +118,7 @@
                     </tr>
                   </thead>
                   <tbody id="tbody">
-                    <?php
+                    <!-- <?php
                     foreach ($information as $info) { ?>
                       <tr>
                         <th scope="row"><?php echo $info->id ?></th>
@@ -135,12 +135,13 @@
                         </td>
                       </tr>
                     <?php
-                    } ?>
+                    } ?>  -->
                   </tbody>
+                  <input id="index" type="hidden" value="<?php echo $index ?>"></input>
                 </table>
               </div>
               <!-- Pagination -->
-              <div class="pagination p-0 m-auto">
+              <div class="pagination p-0 m-auto" id="div_pagination">
                 <ul class="pagination">
                   <li class="page-item <?php echo $_GET['page'] <= 1 ? 'disabled' : '' ?>">
                     <a class="page-link" href="<?php echo BASE_URL ?>login/administrator.php?page=<?php echo $_GET['page'] - 1 ?>" aria-label="Previous">
