@@ -83,7 +83,7 @@
     </section>
     <!-- Fin de Formulario Detalles -->
   </div>
-
+  <?php  include_once('../includes/footer.php') ?>
 </body>
 
 </html>
