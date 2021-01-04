@@ -27,6 +27,7 @@
       $stmt->bindParam("pagination", $pagination, PDO::PARAM_INT);
       $stmt->execute();
       $data = $stmt->fetchAll(PDO::FETCH_OBJ); //User data
+      $db = null;
       return $data;
     } catch (PDOException $e) {
       echo '{"error":{"text":' . $e->getMessage() . '}}';

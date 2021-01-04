@@ -14,9 +14,11 @@ class crudClass{
             $stmt->bindParam("f_afiliacion", $f_afiliacion, PDO::PARAM_STR);
             $stmt->bindParam("id_users", $id_users, PDO::PARAM_INT);
             $stmt->execute();
-            $data = $stmt->fetch(PDO::FETCH_OBJ);
+          
+            $db = null;
             return true;
         } catch (PDOException $e) {
+            
             echo '{"error":{"text":' . $e->getMessage() . '}}';
         }
     }

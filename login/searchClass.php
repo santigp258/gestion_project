@@ -52,8 +52,6 @@ class searchClass{
       //$stmt->bindParam("pagination", $pagination, PDO::PARAM_INT);
       $stmt->execute(); 
       $data = $stmt->fetchAll(PDO::FETCH_ASSOC); //User data
-
-
   foreach($data as $datas) {
     if($datas['id_users'] == $uid){ //no show all results
       echo $message = '<tr>
