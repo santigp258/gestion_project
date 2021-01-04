@@ -87,7 +87,7 @@ $(document).ready(function () {
         e.preventDefault();
       } else if (fields.emailReg == false) {
         let message =
-          "Verifique que esté ingresando caracteres validos. Este campo debe ser de tipo email.";
+          "Verifique que esté ingresando caracteres validos. Este campo debe ser de tipo email. Debe tener @ y un dominio. Ejemplo '.com'";
         let title = "¡Campo email incorrecto!";
         toastr["error"](message, title)
         toastr.options = {
