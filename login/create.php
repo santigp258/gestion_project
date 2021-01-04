@@ -11,7 +11,10 @@
   <link rel="stylesheet" href="<?php echo BASE_URL ?>css/CDN/bootstrap.min.css">
   <link rel="stylesheet" href="<?php echo BASE_URL ?>css/dashboard.css">
   <link href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="<?php echo BASE_URL ?>plugin/toastr/toastr.min.css">
   <title>MP - Crear Afiliación</title>
+  <script src="<?php echo BASE_URL ?>js/jquery.js">
+</script>
 </head>
 
 <body>
@@ -38,12 +41,12 @@
           <div class="col-lg-12">
             <div class="card rouded-0 mt-4">
               <div class="container mt-3">
-                <form action="<?php echo BASE_URL ?>login/crud/sendCreate.php" method="POST">
+                <form action="<?php echo BASE_URL ?>login/crud/sendCreate.php" method="POST" id="formCreate">
                   <!-- Nombre y cedula -->
                   <div class="form-row">
                     <div class="form-group col-md-6">
                       <label for="inputName4">Nombre</label>
-                      <input type="text" class="form-control" id="inputName4" placeholder="Nombre" name="nombreAfi">
+                      <input type="text" class="form-control" id="inputName4" placeholder="Nombre" name="nombreAfi" autofocus>
                     </div>
                     <div class="form-group col-md-6">
                       <label for="inputCedula4">Cedula</label>
@@ -69,10 +72,10 @@
                     </div>
                     <div class="form-group col-md-6">
                       <label for="inputFecha4">Fecha de Afiliación</label>
-                      <input type="date" class="form-control" id="inputFecha4" name="fechaAfi">
+                      <input type="date" class="form-control" id="inputFecha4" name="fechaAfi" required>
                     </div>
                   </div>
-                <button type="submit" class="btn btn-primary mb-3" name="createAfiSubmit" value="save">Guardar</button>
+                <button type="submit" class="btn btn-primary mb-3" name="createAfiSubmit" value="save" id="createAfiSubmit">Guardar</button>
                 <a href="administrator.php"><button type="button" class="btn btn-danger mb-3">Cancelar</button></a>
                 </form>
                 <!-- Botones Guardar y Cancelar -->
@@ -87,4 +90,6 @@
 
 </body>
 <?php  include_once('../includes/footer.php') ?>
+<script src="<?php echo BASE_URL ?>plugin/validationsViews/validateSendCreate.js"></script>
+<script src="<?php echo BASE_URL ?>plugin/toastr/toastr.min.js"></script>
 </html>
