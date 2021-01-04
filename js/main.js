@@ -13,7 +13,16 @@ $(document).ready(function () {
          }
        });
     } else { 
-     var template ;
+      index = $('#index').val();
+      $.ajax({
+        type: "post",
+        url: "../login/search.php",
+        data: {dataShow: '', index: index },
+        dataType: "html",
+        success: function (response) {
+         $('#tbody').html(response);
+        }
+      });
 	};
 };
 $('#search').keyup(Search);

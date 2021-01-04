@@ -137,6 +137,7 @@
                     <?php
                     } ?>  
                   </tbody>
+                  <input type="hidden" value="<?php echo $index ?>" id="index">
                 </table>
               </div>
               <!-- Pagination -->
