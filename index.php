@@ -56,7 +56,6 @@ include('./includes/config.php');
         aliquam blanditiis dolorem. Odio.</p>
     </div>
   </div>
-  <script src="<?php echo BASE_URL ?>js/main.js"></script>
   <script src="<?php echo BASE_URL ?>plugin/toastr/toastr.min.js"></script>
   <script src="<?php echo BASE_URL ?>plugin/toastr/validateLogin.js"></script>
 
