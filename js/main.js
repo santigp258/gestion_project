@@ -1,4 +1,8 @@
 $(document).ready(function () {
+  $('#form').submit(function (e) { 
+    e.preventDefault();
+    
+  });
    var baseURL = "http://localhost/gestion_proyect/";
   function Search() {
     var value = $("#search").val();
@@ -10,6 +14,7 @@ $(document).ready(function () {
          dataType: "html",
          success: function (response) {
            $('#tbody').html(response);
+           $('#div_pagination').hide();
          }
        });
     } else { 
@@ -21,6 +26,7 @@ $(document).ready(function () {
         dataType: "html",
         success: function (response) {
          $('#tbody').html(response);
+         $('#div_pagination').show();
         }
       });
 	};

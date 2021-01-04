@@ -87,10 +87,10 @@
               <!-- Buscar y agregar afiliacion -->
               <div class="container m-2">
                 <nav class="navbar navbar-expand-lg navbar-light bg-light-white">
-                  <form class="form-inline my-2 my-lg-0 lead" >
+                  <form class="form-inline my-2 my-lg-0 lead" action="javascript: e.preventDefault()">
                     <i class="icon ion-md-search" aria-hidden="true"></i>
                     <input class="form-control mr-sm-2 " type="search" placeholder="Buscar" aria-label="Search" id="search">
-                  </form> 
+                  </form>
                   <!-- Search form -->
                   <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ml-auto">
