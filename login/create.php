@@ -38,44 +38,44 @@
           <div class="col-lg-12">
             <div class="card rouded-0 mt-4">
               <div class="container mt-3">
-                <form>
+                <form action="<?php echo BASE_URL ?>login/crud/sendCreate.php" method="POST">
                   <!-- Nombre y cedula -->
                   <div class="form-row">
                     <div class="form-group col-md-6">
                       <label for="inputName4">Nombre</label>
-                      <input type="text" class="form-control" id="inputName4" placeholder="Nombre">
+                      <input type="text" class="form-control" id="inputName4" placeholder="Nombre" name="nombreAfi">
                     </div>
                     <div class="form-group col-md-6">
                       <label for="inputCedula4">Cedula</label>
-                      <input type="text" class="form-control" id="inputCedula4" placeholder="Cedula">
+                      <input type="text" class="form-control" id="inputCedula4" placeholder="Cedula" name="cedulaAfi">
                     </div>
                   </div>
                   <!-- Telefono Ciudad -->
                   <div class="form-row">
                     <div class="form-group col-md-6">
                       <label for="inputTelefono4">Telefono</label>
-                      <input type="text" class="form-control" id="inputTelefono4" placeholder="Telefono">
+                      <input type="text" class="form-control" id="inputTelefono4" placeholder="Telefono" name="telAfi">
                     </div>
                     <div class="form-group col-md-6">
                       <label for="inputCiudad4">Ciudad</label>
-                      <input type="text" class="form-control" id="inputCiudad4" placeholder="Ciudad">
+                      <input type="text" class="form-control" id="inputCiudad4" placeholder="Ciudad" name="ciudadAfi">
                     </div>
                   </div>
                   <!-- Correo Afiliacion -->
                   <div class="form-row">
                     <div class="form-group col-md-6">
                       <label for="inputCorreo4">Correo</label>
-                      <input type="email" class="form-control" id="inputCorreo4" placeholder="Correo">
+                      <input type="text" class="form-control" id="inputCorreo4" placeholder="Correo" name="emailAfi">
                     </div>
                     <div class="form-group col-md-6">
                       <label for="inputFecha4">Fecha de Afiliación</label>
-                      <input type="date" class="form-control" id="inputFecha4">
+                      <input type="date" class="form-control" id="inputFecha4" name="fechaAfi">
                     </div>
                   </div>
+                <button type="submit" class="btn btn-primary mb-3" name="createAfiSubmit" value="save">Guardar</button>
+                <a href="administrator.php"><button type="button" class="btn btn-danger mb-3">Cancelar</button></a>
                 </form>
                 <!-- Botones Guardar y Cancelar -->
-                <button type="submit" class="btn btn-primary mb-3">Guardar</button>
-                <a href="administrator.php"><button type="submit" class="btn btn-danger mb-3">Cancelar</button></a>
               </div>
             </div>
           </div>
