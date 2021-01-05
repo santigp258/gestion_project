@@ -12,6 +12,9 @@
   <link rel="stylesheet" href="<?php echo BASE_URL ?>css/dashboard.css">
   <link href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css" rel="stylesheet">
   <title>MP - Administrar Afiliaciones</title>
+  <link rel="stylesheet" href="<?php echo BASE_URL ?>plugin/toastr/toastr.min.css">
+  <script src="<?php echo BASE_URL ?>js/jquery.js">
+</script>
 </head>
 
 <body>
@@ -198,13 +201,13 @@
 </body>
 
 <!-- Scripts Bootstrap -->
-<script src="<?php echo BASE_URL ?>js/jquery.js">
-</script>
+
 <script src="<?php echo BASE_URL ?>js/main.js"></script>
 <script src="<?php echo BASE_URL ?>js/CDN/popper.js">
 </script>
 <script src="<?php echo BASE_URL ?>js/CDN/bootstrap.js">
 </script>
+<script src="<?php echo BASE_URL ?>plugin/toastr/toastr.min.js"></script>
 <!-- Scripts Bootstrap End -->
 
 </html>
