@@ -12,7 +12,7 @@ class searchClass{
       $data = $stmt->fetchAll(PDO::FETCH_ASSOC); //User data
     };
     if($stmt->rowCount() <= 0){
-      echo $message = "<p>No hay resultados</p>";
+      echo $message = '<script src="../plugin/noResults.js"></script>';
     }else{
     
     foreach($data as $datas) {
