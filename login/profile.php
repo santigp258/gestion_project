@@ -1,4 +1,26 @@
-<?php include('../includes/config.php'); ?>
+<?php include('../includes/config.php'); 
+
+$uid = $_SESSION['uid'];
+if(isset($uid)){
+  $information = showByuserId($uid);
+}
+
+function showByuserId($id) //uid/ dinamic index / total afilitions
+{
+  try {
+    $db = getDB();
+    $stmt = $db->prepare("SELECT * FROM users WHERE uid=:id");
+    $stmt->bindParam("id", $id, PDO::PARAM_INT);
+    $stmt->execute();
+    $data = $stmt->fetchAll(PDO::FETCH_OBJ); //User data
+    $db = null;
+    return $data;
+  } catch (PDOException $e) {
+    echo '{"error":{"text":' . $e->getMessage() . '}}';
+  }
+}
+
+?>
 <!DOCTYPE html>
 <html lang="es">
 
@@ -11,6 +33,8 @@
   <link rel="stylesheet" href="<?php echo BASE_URL ?>css/CDN/bootstrap.min.css">
   <link rel="stylesheet" href="<?php echo BASE_URL ?>css/dashboard.css">
   <link href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="<?php echo BASE_URL ?>plugin/toastr/toastr.min.css">
+  <script src="<?php echo BASE_URL ?>js/jquery.js"></script>
   <title>MP - Mi Perfil</title>
 </head>
 
@@ -38,33 +62,35 @@
           <div class="col-lg-12">
             <div class="card rouded-0 mt-4">
               <div class="container mt-3">
-                <form>
+                <form action="<?php echo BASE_URL ?>login/crud/updateProfile.php" method="POST">
                   <!-- Nombre y cedula -->
                   <div class="form-row">
                     <div class="form-group col-md-6">
-                      <label for="inputUser4">Usuario</label>
-                      <input type="text" class="form-control" id="inputUser4" placeholder="Usuario" disabled>
+                    <?php foreach($information as $info){ ?>
+                      <label for="usernamePro">Usuario</label>
+                      <input type="text" class="form-control" id="usernamePro" name="usernamePro" value="<?php echo $info->username ?>" disabled>
                     </div>
                   </div>
                   <!-- Telefono Ciudad -->
                   <div class="form-row">
                     <div class="form-group col-md-6">
-                      <label for="inputemailuser4">Correo Electronico</label>
-                      <input type="email" class="form-control" id="inputemailuser4" placeholder="Correo Electronico"
-                        disabled>
+                      <label for="emailPro">Correo Electronico</label>
+                      <input type="email" class="form-control" id="emailPro"  name="emailPro" value="<?php echo $info->email ?>" disabled
+                        >
                     </div>
                   </div>
                   <!-- Correo Afiliacion -->
                   <div class="form-row">
                     <div class="form-group col-md-6">
-                      <label for="inputcontraseñauser4">Contraseña</label>
-                      <input type="password" class="form-control" id="inputcontraseñauser4" placeholder="Contraseña">
+                      <label for="passwordPro">Contraseña</label>
+                      <input type="password" class="form-control" id="passwordPro"  name="passwordPro"> <i style="position: absolute; top: 36px; right: 12px; cursor:pointer" class="icon ion-ios-eye mr-2 lead show"></i><i style="position: absolute; top: 36px; right: 12px; cursor:pointer" class="icon ion-md-eye-off mr-2 lead hide"></i>
                     </div>
                   </div>
+                  <?php  }?>
+                <button type="submit" class="btn btn-primary mb-3" id="signupSubmit" >Actualizar</button>
+                <a href="administrator.php"><button type="submit" class="btn btn-danger mb-3">Cancelar</button></a>
                 </form>
                 <!-- Botones Guardar y Cancelar -->
-                <button type="submit" class="btn btn-primary mb-3">Actualizar</button>
-                <a href="administrator.php"><button type="submit" class="btn btn-danger mb-3">Cancelar</button></a>
               </div>
             </div>
           </div>
@@ -73,8 +99,11 @@
     </section>
     <!-- Fin de Formulario Perfil -->
   </div>
+<?php  include_once('../includes/footer.php') ?>
+<script src="<?php echo BASE_URL ?>plugin/validationsViews/updatedProfile.js"></script>
+<script src="<?php echo BASE_URL ?>plugin/toastr/toastr.min.js"></script>
+<script src="<?php echo BASE_URL ?>js/eyes.js"></script>
 
 </body>
-<?php  include_once('../includes/footer.php') ?>
 
 </html>
