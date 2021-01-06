@@ -75,7 +75,7 @@
                       <input type="date" class="form-control" id="inputFecha4" name="fechaAfi" required>
                     </div>
                   </div>
-                <button type="submit" class="btn btn-primary mb-3" name="createAfiSubmit" value="save" id="createAfiSubmit">Guardar</button>
+                <button type="submit" id="submitCreate"class="btn btn-primary mb-3" name="createAfiSubmit" value="save" id="createAfiSubmit">Guardar</button>
                 <a href="administrator.php"><button type="button" class="btn btn-danger mb-3">Cancelar</button></a>
                 </form>
                 <!-- Botones Guardar y Cancelar -->

@@ -42,7 +42,7 @@ include('../includes/config.php');
         <label for="passwordReg">Contraseña</label>
         <input type="password" name="passwordReg" id="passwordReg" autocomplete="off">
         <!-- Boton Registarse -->
-        <input type="submit" name="signupSubmit" value="Registrar">
+        <input type="submit" name="signupSubmit" value="Registrar" id="signupSubmit">
       </form>
       <!-- Text Footer -->
       <span class="text-footer">¿Ya te has registrado?<a href="<?php echo BASE_URL ?>index.php">
