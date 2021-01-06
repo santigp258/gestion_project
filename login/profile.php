@@ -88,7 +88,7 @@ function showByuserId($id) //uid/ dinamic index / total afilitions
                   </div>
                   <?php  }?>
                 <button type="submit" class="btn btn-primary mb-3" id="signupSubmit" >Actualizar</button>
-                <a href="administrator.php"><button type="submit" class="btn btn-danger mb-3">Cancelar</button></a>
+                <a href="administrator.php"><button type="button" class="btn btn-danger mb-3">Cancelar</button></a>
                 </form>
                 <!-- Botones Guardar y Cancelar -->
               </div>
