@@ -9,7 +9,7 @@ if (isset($_GET['id'])) {
   }
 }
 
-function deleteById($id) //uid/ dinamic index / total afilitions
+function deleteById($id)
 {
   try {
     $db = getDB();
