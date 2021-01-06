@@ -8,8 +8,8 @@
           var that = $(this);
           that.submit(function (e) {
              bootbox.confirm({
-              title: "Eliminar datos afiliación.",
-              message: "¿Está usted seguro?",
+              title: "¿Está usted seguro?" ,
+              message: "Eliminar datos afiliación.",
               buttons: {
                 cancel: {
                   label: '<i class="fa fa-times"></i> Cancelar',

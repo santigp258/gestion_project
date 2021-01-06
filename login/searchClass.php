@@ -27,9 +27,9 @@ class searchClass{
       <td>'.$datas['f_afiliacion'].'</td>
       <td>
       <form action="'.$url.'login/crud/delete.php" method="POST" class="delete" >
-      <a href="'.$url.'login/show.php?id='.$idCreate.'"><span class="icon ion-md-eye lead" style="color:var(--primary)"></span></a>
-      <a href="'.$url.'login/edit.php?id='.$idCreate.'"><span class="icon ion-md-create lead" style="color:var(--orange)"></span></a>
-      <button type="submit" name="id"  value="'. $idCreate.'" style="border: none; background: transparent; cursor:pointer"><a ><span class="icon ion-md-trash lead" style="color:var(--red);"></span></a></button>
+      <a href="'.$url.'login/show.php?id='.$datas['id'].'"><span class="icon ion-md-eye lead" style="color:var(--primary)"></span></a>
+      <a href="'.$url.'login/edit.php?id='.$datas['id'].'"><span class="icon ion-md-create lead" style="color:var(--orange)"></span></a>
+      <button type="submit" name="id"  value="'. $datas['id'].'" style="border: none; background: transparent; cursor:pointer"><a ><span class="icon ion-md-trash lead" style="color:var(--red);"></span></a></button>
       </form>
       </td>
       <input type="hidden" value="'. $count .'" id="totalResults">
@@ -66,9 +66,9 @@ class searchClass{
     <td>'.$datas['f_afiliacion'].'</td>
     <td>
     <form action="'.$url.'login/crud/delete.php" method="POST" class="delete">
-    <a href="'.$url.'login/show.php?id='.$idCreate.'"><span class="icon ion-md-eye lead" style="color:var(--primary)"></span></a>
-    <a href="'.$url.'login/edit.php?id='.$idCreate.'"><span class="icon ion-md-create lead" style="color:var(--orange)"></span></a>
-    <button type="submit" name="id"  value="'. $idCreate.'" style="border: none; background: transparent; cursor:pointer"><a ><span class="icon ion-md-trash lead" style="color:var(--red);"></span></a></button>
+    <a href="'.$url.'login/show.php?id='.$datas['id'].'"><span class="icon ion-md-eye lead" style="color:var(--primary)"></span></a>
+    <a href="'.$url.'login/edit.php?id='.$datas['id'].'"><span class="icon ion-md-create lead" style="color:var(--orange)"></span></a>
+    <button type="submit" name="id"  value="'. $datas['id'].'" style="border: none; background: transparent; cursor:pointer"><a ><span class="icon ion-md-trash lead" style="color:var(--red);"></span></a></button>
     </form>
     </td>
     <input type="hidden" value="0" id="totalResults">
