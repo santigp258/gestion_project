@@ -18,7 +18,9 @@ if (isset($_GET['id'])) {
   <link rel="stylesheet" href="<?php echo BASE_URL ?>css/CDN/bootstrap.min.css">
   <link rel="stylesheet" href="<?php echo BASE_URL ?>css/dashboard.css">
   <link href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="<?php echo BASE_URL ?>plugin/toastr/toastr.min.css">
   <title>MP - Editar Afiliación</title>
+  <script src="<?php echo BASE_URL ?>js/jquery.js"></script>
 </head>
 
 <body>
@@ -45,44 +47,44 @@ if (isset($_GET['id'])) {
           <div class="col-lg-12">
             <div class="card rouded-0 mt-4">
               <div class="container mt-3">
-                <form>
+                  <?php foreach($information as $info){ ?>
+                <form action="<?php echo BASE_URL?>login/crud/sendEdit.php?id=<?php echo $info->id?>" method="POST" id="formEdit">
                   <!-- Nombre y cedula -->
                   <div class="form-row">
-                  <?php foreach($information as $info){ ?>
                     <div class="form-group col-md-6">
                       <label for="inputName4">Nombre</label>
-                      <input type="text" class="form-control" id="inputName4" value="<?php echo $info->nombre ?>">
+                      <input type="text" class="form-control" id="inputName4" name="nombreAfi" value="<?php echo $info->nombre ?>">
                     </div>
                     <div class="form-group col-md-6">
                       <label for="inputCedula4">Cedula</label>
-                      <input type="text" class="form-control" id="inputCedula4" value="<?php echo $info->cedula ?>">
+                      <input type="text" class="form-control" id="inputCedula4" name="cedulaAfi" value="<?php echo $info->cedula ?>">
                     </div>
                   </div>
                   <!-- Telefono Ciudad -->
                   <div class="form-row">
                     <div class="form-group col-md-6">
                       <label for="inputTelefono4">Telefono</label>
-                      <input type="text" class="form-control" id="inputTelefono4" value="<?php echo $info->telefono ?>">
+                      <input type="text" class="form-control" id="inputTelefono4" name="telAfi" value="<?php echo $info->telefono ?>">
                     </div>
                     <div class="form-group col-md-6">
                       <label for="inputCiudad4">Ciudad</label>
-                      <input type="text" class="form-control" id="inputCiudad4" value="<?php echo $info->ciudad ?>">
+                      <input type="text" class="form-control" id="inputCiudad4" name="ciudadAfi" value="<?php echo $info->ciudad ?>">
                     </div>
                   </div>
                   <!-- Correo Afiliacion -->
                   <div class="form-row">
                     <div class="form-group col-md-6">
                       <label for="inputCorreo4">Correo</label>
-                      <input type="email" class="form-control" id="inputCorreo4" value="<?php echo $info->email ?>">
+                      <input type="email" class="form-control" id="inputCorreo4" name="emailAfi" value="<?php echo $info->email ?>">
                     </div>
                     <div class="form-group col-md-6">
                       <label for="inputFecha4">Fecha de Afiliación</label>
-                      <input type="date" class="form-control" id="inputFecha4"  value="<?php echo $info->f_afiliacion ?>">
+                      <input type="date" class="form-control" id="inputFecha4" name="fechaAfi"  value="<?php echo $info->f_afiliacion ?>">
                     </div>
                   </div>
                   <?php } ?>
                 <!-- Botones Guardar y Cancelar -->
-                <button type="submit" class="btn btn-primary mb-3">Actualizar</button>
+                <button type="submit" class="btn btn-primary mb-3" name="edit" id="submitEdit">Actualizar</button>
                 <a href="administrator.php"><button type="button" class="btn btn-danger mb-3">Cancelar</button></a>
                 </form>
               </div>
@@ -96,5 +98,6 @@ if (isset($_GET['id'])) {
 
 </body>
 <?php include_once('../includes/footer.php') ?>
-
+<script src="<?php echo BASE_URL ?>plugin/validationsViews/validateSendEdit.js"></script>
+<script src="<?php echo BASE_URL ?>plugin/toastr/toastr.min.js"></script>
 </html>

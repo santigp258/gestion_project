@@ -40,18 +40,18 @@ class crudClass
         }
     } //end showAfiById
 
-    public function updatedAffiliation($nombre, $cedula, $telefono, $ciudad, $email, $f_afiliacion)
+    public function updatedAffiliation($nombre, $cedula, $telefono, $ciudad, $email, $f_afiliacion, $id)
     {
         try {
             $db = getDB();
-            $stmt = $db->prepare("INSERT INTO afiliaciones (nombre,cedula,telefono, ciudad, email, f_afiliacion, id_users) VALUES (:nombre,:cedula,:telefono,:ciudad, :email, :f_afiliacion) ");
+            $stmt = $db->prepare("UPDATE `afiliaciones` SET `nombre`=:nombre,`cedula`=:cedula, `telefono`=:telefono , `ciudad`=:ciudad, `email`=:email, `f_afiliacion`=:f_afiliacion ,`updatedAt`= CURRENT_TIMESTAMP WHERE `id`=:id");
             $stmt->bindParam("nombre", $nombre, PDO::PARAM_STR);
             $stmt->bindParam("cedula", $cedula, PDO::PARAM_STR);
             $stmt->bindParam("telefono", $telefono, PDO::PARAM_STR);
             $stmt->bindParam("ciudad", $ciudad, PDO::PARAM_STR);
             $stmt->bindParam("email", $email, PDO::PARAM_STR);
             $stmt->bindParam("f_afiliacion", $f_afiliacion, PDO::PARAM_STR);
-            $stmt->bindParam("id_users", $id_users, PDO::PARAM_INT);
+            $stmt->bindParam("id", $id, PDO::PARAM_INT);
             $stmt->execute();
 
             $db = null;
