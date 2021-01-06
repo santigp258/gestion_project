@@ -14,6 +14,7 @@
   <title>MP - Administrar Afiliaciones</title>
   <link rel="stylesheet" href="<?php echo BASE_URL ?>plugin/toastr/toastr.min.css">
   <script src="<?php echo BASE_URL ?>js/jquery.js">
+
 </script>
 </head>
 
@@ -139,9 +140,11 @@
                           <td><?php echo $info->email ?></td>
                           <td><?php echo $info->f_afiliacion ?></td>
                           <td>
+                            <form action="<?php echo BASE_URL?>login/crud/delete.php" method="POST" class="delete" >
                             <a href="<?php echo BASE_URL?>login/show.php?id=<?php echo $info->id ?>"><span class='icon ion-md-eye lead' style="color:var(--primary)"></span></a>
                             <a href="<?php echo BASE_URL?>login/edit.php?id=<?php echo $info->id ?>"><span class='icon ion-md-create lead' style="color:var(--orange)"></span></a>
-                            <a href="<?php echo BASE_URL?>login/crud/delete.php?id=<?php echo $info->id ?>"><span class='icon ion-md-trash lead' style="color:var(--red);"></span></a>
+                            <button type="submit" name="id"  value="<?php  echo $info->id ?>" style="border: none; background: transparent; cursor:pointer"><a ><span class='icon ion-md-trash lead' style="color:var(--red);"></span></a></button>
+                            </form>
                           </td>
                         </tr>
                       <?php
@@ -201,12 +204,13 @@
 </body>
 
 <!-- Scripts Bootstrap -->
-
 <script src="<?php echo BASE_URL ?>js/main.js"></script>
 <script src="<?php echo BASE_URL ?>js/CDN/popper.js">
 </script>
 <script src="<?php echo BASE_URL ?>js/CDN/bootstrap.js">
 </script>
+<script src="<?php echo BASE_URL ?>plugin/bootbox/bootbox.min.js"></script>
+<script src="<?php echo BASE_URL ?>plugin/bootbox/delete.js"></script>
 <script src="<?php echo BASE_URL ?>plugin/toastr/toastr.min.js"></script>
 <!-- Scripts Bootstrap End -->
 

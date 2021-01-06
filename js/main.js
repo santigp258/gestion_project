@@ -3,7 +3,11 @@ $(document).ready(function () {
     e.preventDefault();
     
   });
+  var form = $(".delete"); //array forms
    var baseURL = "http://localhost/gestion_proyect/";
+   var script = "<script src='" +
+   baseURL +
+   "plugin/bootbox/delete.js'></script>";
   function Search() {
     var value = $("#search").val();
     if (value != "" ) { 
@@ -18,29 +22,41 @@ $(document).ready(function () {
         progressBar: true,
       };
       }else{
+        $.each(form, function (indexInArray, valueOfElement) { 
+          var that = $(this);
+          let ids = that[0].lastElementChild.value;
+          if(ids != undefined){
         $.ajax({
           type: "post",
           url: "../login/search.php",
-          data: {data: value},
+          data: {data: value, ids: ids},
           dataType: "html",
           success: function (response) {
-            $('#tbody').html(response);
+            $('#tbody').html(response + script);
             $('#div_pagination').hide();
           }
         });
       }
+      });
+      }
        
     } else { 
-      index = $('#index').val();
-      $.ajax({
-        type: "post",
-        url: "../login/search.php",
-        data: {dataShow: '', index: index },
-        dataType: "html",
-        success: function (response) {
-         $('#tbody').html(response);
-         $('#div_pagination').show();
-        }
+     var index = $('#index').val();
+      $.each(form, function (indexInArray, valueOfElement) { 
+        var that = $(this);
+        let id = that[0].lastElementChild.value;
+       if(id != undefined){
+         $.ajax({
+           type: "post",
+           url: "../login/search.php",
+           data: {dataShow: '', index: index, id: id },
+           dataType: "html",
+           success: function (response) {
+            $('#tbody').html(response + script);
+            $('#div_pagination').show();
+           }
+         });      
+        } 
       });
 	};
 };

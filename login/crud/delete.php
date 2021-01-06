@@ -1,15 +1,19 @@
 <?php
 include('../../includes/config.php');
-if (isset($_GET['id'])) {
-  $id = $_GET['id'];
+include('../searchClass.php');
+if (isset($_POST['id'])) {
+  $info = new searchClass();
+  $id = $_POST['id'];
   $information = deleteById($id);
-  if ($information) {
-    $url = BASE_URL . 'login/administrator.php';
-    header('Location:' . $url);
-  }
+ /*  if ($information) {
+    $base = BASE_URL;
+    $pagination = 4;
+    $index = $_POST['index'];
+   echo  $info->showInformation(1,  intVal($index), $pagination, $base, $id );
+  } */
 }
 
-function deleteById($id)
+function deleteById($id) //uid/ dinamic index / total afilitions
 {
   try {
     $db = getDB();

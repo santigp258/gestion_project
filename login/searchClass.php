@@ -1,6 +1,6 @@
 <?php 
 class searchClass{
-  public function searchMatches($data, $session_uid){
+  public function searchMatches($data, $session_uid, $url, $idCreate){
     if(isset($data)){
       $data = $data;
       $uid = $session_uid ;
@@ -26,9 +26,11 @@ class searchClass{
       <td>'.$datas['email'].'</td>
       <td>'.$datas['f_afiliacion'].'</td>
       <td>
-        <a href="#"><span class="icon ion-md-eye lead" style="color:var(--primary)"></span></a>
-        <a href="#"><span class="icon ion-md-create lead" style="color:var(--orange)"></span></a>
-        <a href="#"><span class="icon ion-md-trash lead" style="color:var(--red);"></span></a>
+      <form action="'.$url.'login/crud/delete.php" method="POST" class="delete" >
+      <a href="'.$url.'login/show.php?id='.$idCreate.'"><span class="icon ion-md-eye lead" style="color:var(--primary)"></span></a>
+      <a href="'.$url.'login/edit.php?id='.$idCreate.'"><span class="icon ion-md-create lead" style="color:var(--orange)"></span></a>
+      <button type="submit" name="id"  value="'. $idCreate.'" style="border: none; background: transparent; cursor:pointer"><a ><span class="icon ion-md-trash lead" style="color:var(--red);"></span></a></button>
+      </form>
       </td>
       <input type="hidden" value="'. $count .'" id="totalResults">
     </tr>';
@@ -42,7 +44,7 @@ class searchClass{
   } //end searchmatch()
   
 
-  public function showInformation($uid, $index, $pagination) //uid/ dinamic index / total afilitions
+  public function showInformation($uid, $index, $pagination, $url, $idCreate) //uid/ dinamic index / total afilitions
   {
   
       $db = getDB();
@@ -63,9 +65,11 @@ class searchClass{
     <td>'.$datas['email'].'</td>
     <td>'.$datas['f_afiliacion'].'</td>
     <td>
-      <a href="#"><span class="icon ion-md-eye lead" style="color:var(--primary)"></span></a>
-      <a href="#"><span class="icon ion-md-create lead" style="color:var(--orange)"></span></a>
-      <a href="#"><span class="icon ion-md-trash lead" style="color:var(--red);"></span></a>
+    <form action="'.$url.'login/crud/delete.php" method="POST" class="delete">
+    <a href="'.$url.'login/show.php?id='.$idCreate.'"><span class="icon ion-md-eye lead" style="color:var(--primary)"></span></a>
+    <a href="'.$url.'login/edit.php?id='.$idCreate.'"><span class="icon ion-md-create lead" style="color:var(--orange)"></span></a>
+    <button type="submit" name="id"  value="'. $idCreate.'" style="border: none; background: transparent; cursor:pointer"><a ><span class="icon ion-md-trash lead" style="color:var(--red);"></span></a></button>
+    </form>
     </td>
     <input type="hidden" value="0" id="totalResults">
   </tr>';

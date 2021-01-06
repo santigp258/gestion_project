@@ -86,10 +86,9 @@ $(document).ready(function () {
           createAfiSubmit: " ",
         },
         success: function (response) {
-          console.log('xd');
           if (response == "created") {
             $('#submitCreate').attr("disabled", "disabled");
-            let title = "¡Afiliciaón creada!";
+            let title = "¡Afiliación creada!";
             toastr["success"](title);
             toastr.options = {
               closeButton: true,
