@@ -5,12 +5,13 @@ if (isset($_POST['id'])) {
   $info = new searchClass();
   $id = $_POST['id'];
   $information = deleteById($id);
- /*  if ($information) {
+ if ($information) {
+    $uid = $_SESSION['uid'];
     $base = BASE_URL;
     $pagination = 4;
     $index = $_POST['index'];
-   echo  $info->showInformation(1,  intVal($index), $pagination, $base, $id );
-  } */
+   echo  $info->showInformation($uid,  intVal($index), $pagination, $base, $id );
+  } 
 }
 
 function deleteById($id) //uid/ dinamic index / total afilitions
