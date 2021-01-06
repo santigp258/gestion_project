@@ -23,7 +23,7 @@ class crudClass
 
             echo '{"error":{"text":' . $e->getMessage() . '}}';
         }
-    }
+    } // end createAffiliation
 
     public function showAfiByid($id)
     {
@@ -63,7 +63,7 @@ class crudClass
     } //end updatedAffiliation
 
 
-    function showUserBySessionId($id) 
+    public function showUserBySessionId($id)
     {
         try {
             $db = getDB();
@@ -73,6 +73,23 @@ class crudClass
             $data = $stmt->fetchAll(PDO::FETCH_OBJ); //User data
             $db = null;
             return $data;
+        } catch (PDOException $e) {
+            echo '{"error":{"text":' . $e->getMessage() . '}}';
+        }
+    }
+
+    public function updatedUserProfile($username, $password, $email, $uid)
+    {
+        try {
+            $db = getDB();
+            $stmt = $db->prepare("UPDATE `users` SET `username`=:username,`password`=:hash_password ,`email`=:email ,`updated_At`= CURRENT_TIMESTAMP WHERE `uid`=:uid");
+            $stmt->bindParam("username", $username, PDO::PARAM_STR);
+            $hash_password = hash('sha256', $password); //Password encryption
+            $stmt->bindParam("hash_password", $hash_password, PDO::PARAM_STR);
+            $stmt->bindParam("email", $email, PDO::PARAM_STR);
+            $stmt->bindParam("uid", $uid, PDO::PARAM_INT);
+            $stmt->execute();
+            $db = null;
         } catch (PDOException $e) {
             echo '{"error":{"text":' . $e->getMessage() . '}}';
         }
