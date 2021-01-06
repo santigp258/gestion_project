@@ -24,7 +24,7 @@
         <div class="row">
           <div class="col-lg-9">
             <h1 class="title-admin mb-0">Editar Afiliación</h1>
-            <p class="subtitle-admin lead text-muted">Actualizar Informacion Vendedora MP</p>
+            <p class="subtitle-admin lead text-muted">Actualiza los Datos de esta Afiliación</p>
           </div>
         </div>
       </div>
@@ -87,4 +87,5 @@
 
 </body>
 <?php  include_once('../includes/footer.php') ?>
+
 </html>

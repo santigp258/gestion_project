@@ -42,34 +42,23 @@
                   <!-- Nombre y cedula -->
                   <div class="form-row">
                     <div class="form-group col-md-6">
-                      <label for="inputName4">Nombre</label>
-                      <input type="text" class="form-control" id="inputName4" placeholder="Nombre">
-                    </div>
-                    <div class="form-group col-md-6">
-                      <label for="inputCedula4">Cedula</label>
-                      <input type="text" class="form-control" id="inputCedula4" placeholder="Cedula">
+                      <label for="inputUser4">Usuario</label>
+                      <input type="text" class="form-control" id="inputUser4" placeholder="Usuario" disabled>
                     </div>
                   </div>
                   <!-- Telefono Ciudad -->
                   <div class="form-row">
                     <div class="form-group col-md-6">
-                      <label for="inputTelefono4">Telefono</label>
-                      <input type="text" class="form-control" id="inputTelefono4" placeholder="Telefono">
-                    </div>
-                    <div class="form-group col-md-6">
-                      <label for="inputCiudad4">Ciudad</label>
-                      <input type="text" class="form-control" id="inputCiudad4" placeholder="Ciudad">
+                      <label for="inputemailuser4">Correo Electronico</label>
+                      <input type="email" class="form-control" id="inputemailuser4" placeholder="Correo Electronico"
+                        disabled>
                     </div>
                   </div>
                   <!-- Correo Afiliacion -->
                   <div class="form-row">
                     <div class="form-group col-md-6">
-                      <label for="inputCorreo4">Correo</label>
-                      <input type="email" class="form-control" id="inputCorreo4" placeholder="Correo">
-                    </div>
-                    <div class="form-group col-md-6">
-                      <label for="inputFecha4">Fecha de Afiliación</label>
-                      <input type="date" class="form-control" id="inputFecha4">
+                      <label for="inputcontraseñauser4">Contraseña</label>
+                      <input type="password" class="form-control" id="inputcontraseñauser4" placeholder="Contraseña">
                     </div>
                   </div>
                 </form>
@@ -87,4 +76,5 @@
 
 </body>
 <?php  include_once('../includes/footer.php') ?>
+
 </html>

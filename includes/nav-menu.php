@@ -4,7 +4,7 @@ $userDetails = $userClass->userDetails($session_uid);
 ?>
 <!-- Barra de Navegacion -->
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand font-weight-bold" href="#">MP DASHBOARD</a>
+  <a class="navbar-brand font-weight-bold" href="#">S.C.F DASHBOARD</a>
   <div class="container">
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav ml-auto">
@@ -17,6 +17,7 @@ $userDetails = $userClass->userDetails($session_uid);
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
               <a class="dropdown-item" href="profile.php">Mi Perfil</a>
+            </div>
           </li>
         </div>
         <!-- <li class="nav-item">
@@ -33,7 +34,7 @@ $userDetails = $userClass->userDetails($session_uid);
   <div id="sidebar-container" class="bg-dark">
     <div class="title-menu">
       <h4 class="p-2 mt-3">Sistema de Control</h4>
-      <h4>de Afiliaciónes MP</h4>
+      <h4>de Afiliaciónes </h4>
     </div>
     <div class="menu mt-5">
       <a href="dashboard.php" class="d-block text-light p-3"><i class="icon ion-ios-home mr-2 lead"></i>

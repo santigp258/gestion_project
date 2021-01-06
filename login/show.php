@@ -45,7 +45,8 @@ function showByid($id) //uid/ dinamic index / total afilitions
         <div class="row">
           <div class="col-lg-9">
             <h1 class="title-admin mb-0">Detalles de Afiliación</h1>
-            <p class="subtitle-admin lead text-muted">Vendedora MP</p>
+            <p class="subtitle-admin lead text-muted">Visualiza los Datos de esta
+              Afiliación</p>
           </div>
         </div>
       </div>
@@ -60,41 +61,47 @@ function showByid($id) //uid/ dinamic index / total afilitions
             <div class="card rouded-0 mt-4">
               <div class="container mt-3">
 
-                  <!-- Nombre y cedula -->
-                  <div class="form-row">
-                    <div class="form-group col-md-6">
+                <!-- Nombre y cedula -->
+                <div class="form-row">
+                  <div class="form-group col-md-6">
                     <?php foreach($information as $info){ ?>
-                      <label for="inputName4">Nombre</label>
-                      <input type="text" class="form-control" id="inputName4" placeholder="Nombre" value="<?php echo  $info->nombre ?>" disabled>
-                    </div>
-                    <div class="form-group col-md-6">
-                      <label for="inputCedula4">Cedula</label>
-                      <input type="text" class="form-control" id="inputCedula4" placeholder="Cedula"  value="<?php echo $info->cedula ?>" disabled>
-                    </div>
+                    <label for="inputName4">Nombre</label>
+                    <input type="text" class="form-control" id="inputName4" placeholder="Nombre"
+                      value="<?php echo  $info->nombre ?>" disabled>
                   </div>
-                  <!-- Telefono Ciudad -->
-                  <div class="form-row">
-                    <div class="form-group col-md-6">
-                      <label for="inputTelefono4">Telefono</label>
-                      <input type="text" class="form-control" id="inputTelefono4" placeholder="Telefono" value="<?php echo $info->telefono ?>" disabled>
-                    </div>
-                    <div class="form-group col-md-6">
-                      <label for="inputCiudad4">Ciudad</label>
-                      <input type="text" class="form-control" id="inputCiudad4" placeholder="Ciudad" value="<?php echo  $info->ciudad?>" disabled>
-                    </div>
+                  <div class="form-group col-md-6">
+                    <label for="inputCedula4">Cedula</label>
+                    <input type="text" class="form-control" id="inputCedula4" placeholder="Cedula"
+                      value="<?php echo $info->cedula ?>" disabled>
                   </div>
-                  <!-- Correo Afiliacion -->
-                  <div class="form-row">
-                    <div class="form-group col-md-6">
-                      <label for="inputCorreo4">Correo</label>
-                      <input type="email" class="form-control" id="inputCorreo4" placeholder="Correo" value="<?php echo $info->email ?>" disabled>
-                    </div>
-                    <div class="form-group col-md-6">
-                      <label for="inputFecha4">Fecha de Afiliación</label>
-                      <input type="date" class="form-control" id="inputFecha4" value="<?php echo  $info->f_afiliacion ?>" disabled>
-                    </div>
+                </div>
+                <!-- Telefono Ciudad -->
+                <div class="form-row">
+                  <div class="form-group col-md-6">
+                    <label for="inputTelefono4">Telefono</label>
+                    <input type="text" class="form-control" id="inputTelefono4" placeholder="Telefono"
+                      value="<?php echo $info->telefono ?>" disabled>
                   </div>
-                  <?php } ?>
+                  <div class="form-group col-md-6">
+                    <label for="inputCiudad4">Ciudad</label>
+                    <input type="text" class="form-control" id="inputCiudad4" placeholder="Ciudad"
+                      value="<?php echo  $info->ciudad?>" disabled>
+                  </div>
+                </div>
+                <!-- Correo Afiliacion -->
+                <div class="form-row">
+                  <div class="form-group col-md-6">
+                    <label for="inputCorreo4">Correo</label>
+                    <input type="email" class="form-control" id="inputCorreo4" placeholder="Correo"
+                      value="<?php echo $info->email ?>" disabled>
+                  </div>
+                  <div class="form-group col-md-6">
+                    <label for="inputFecha4">Fecha de Afiliación</label>
+                    <input type="date" class="form-control" id="inputFecha4" value="<?php echo  $info->f_afiliacion ?>"
+                      disabled>
+                  </div>
+                </div>
+                <?php } ?>
                 <!-- Boton Regresar-->
                 <a href="administrator.php"><button type="submit" class="btn btn-danger mb-3">Atras</button></a>
               </div>
