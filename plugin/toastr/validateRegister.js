@@ -63,6 +63,7 @@ $(document).ready(function () {
             "plugin/toastr/errorRegister.js'></script>";
           $(document.body).append(error);
         } else {
+          $('#signupSubmit').attr("disabled", "disabled");
           var success =
             "<script src='" +
             baseURL +
