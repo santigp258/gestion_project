@@ -139,8 +139,8 @@
                           <td><?php echo $info->email ?></td>
                           <td><?php echo $info->f_afiliacion ?></td>
                           <td>
-                            <a href="show.php"><span class='icon ion-md-eye lead' style="color:var(--primary)"></span></a>
-                            <a href="edit.php"><span class='icon ion-md-create lead' style="color:var(--orange)"></span></a>
+                            <a href="<?php echo BASE_URL?>login/show.php?id=<?php echo $info->id ?>"><span class='icon ion-md-eye lead' style="color:var(--primary)"></span></a>
+                            <a href="<?php echo BASE_URL?>login/edit.php<?php echo $info->id ?>"><span class='icon ion-md-create lead' style="color:var(--orange)"></span></a>
                             <a href="#"><span class='icon ion-md-trash lead' style="color:var(--red);"></span></a>
                           </td>
                         </tr>
