@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 06-01-2021 a las 10:58:19
+-- Tiempo de generación: 06-01-2021 a las 20:02:31
 -- Versión del servidor: 10.4.14-MariaDB
 -- Versión de PHP: 7.2.34
 
@@ -18,196 +18,105 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de datos: `ventas`
+-- Base de datos: `gestion`
 --
-CREATE DATABASE IF NOT EXISTS `ventas` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
-USE `ventas`;
+CREATE DATABASE IF NOT EXISTS `gestion` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
+USE `gestion`;
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `detallefactura`
+-- Estructura de tabla para la tabla `afiliaciones`
 --
 
-CREATE TABLE `detallefactura` (
-  `id` bigint(20) UNSIGNED NOT NULL,
-  `id_producto` bigint(20) UNSIGNED NOT NULL,
-  `cantidad` bigint(20) UNSIGNED NOT NULL,
-  `id_venta` bigint(20) UNSIGNED NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Volcado de datos para la tabla `detallefactura`
---
-
-INSERT INTO `detallefactura` (`id`, `id_producto`, `cantidad`, `id_venta`) VALUES
-(11, 24, 1, 33);
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `factura`
---
-
-CREATE TABLE `factura` (
-  `id` bigint(20) UNSIGNED NOT NULL,
-  `fecha` datetime NOT NULL,
-  `total` decimal(7,2) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Volcado de datos para la tabla `factura`
---
-
-INSERT INTO `factura` (`id`, `fecha`, `total`) VALUES
-(33, '2020-11-26 21:20:40', '2300.00'),
-(35, '2020-11-26 22:37:40', '1800.00'),
-(36, '2020-11-26 22:44:03', '15000.00'),
-(37, '2020-12-01 16:23:10', '600.00'),
-(38, '2020-12-01 16:46:59', '2000.00'),
-(39, '2020-12-01 16:48:28', '1000.00'),
-(40, '2020-12-06 00:44:02', '1300.00');
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `perfiles`
---
-
-CREATE TABLE `perfiles` (
-  `id` int(11) NOT NULL,
-  `tipo` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Volcado de datos para la tabla `perfiles`
---
-
-INSERT INTO `perfiles` (`id`, `tipo`) VALUES
-(1, 'Administrador'),
-(2, 'vendedor');
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `productos`
---
-
-CREATE TABLE `productos` (
-  `id` bigint(20) UNSIGNED NOT NULL,
-  `codigo` varchar(255) NOT NULL,
-  `descripcion` varchar(255) NOT NULL,
-  `precioVenta` float NOT NULL,
-  `precioCompra` float NOT NULL,
-  `existencia` float NOT NULL,
-  `imagen` text CHARACTER SET utf8 COLLATE utf8_spanish_ci NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Volcado de datos para la tabla `productos`
---
-
-INSERT INTO `productos` (`id`, `codigo`, `descripcion`, `precioVenta`, `precioCompra`, `existencia`, `imagen`) VALUES
-(24, '526', 'PAN', 500, 300, 3, ''),
-(29, '1234', 'luis', 25000, 1000, 123, 'FONDO.png'),
-(30, 'wfwg', '12334', 1234, 145, 12, 'logo.ico'),
-(31, '1234', 'Tubo Conduit 3/4\" Pvc x3m Gerfor', 2800, 2000, 100, '');
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `usuarios`
---
-
-CREATE TABLE `usuarios` (
-  `id` int(11) UNSIGNED NOT NULL,
-  `nombre` varchar(45) NOT NULL DEFAULT '',
-  `telefono` varchar(11) NOT NULL,
-  `correo` varchar(45) NOT NULL,
-  `usuario` varchar(45) NOT NULL DEFAULT '',
-  `contraseña` varchar(45) NOT NULL DEFAULT '',
-  `fecha_ingreso` datetime NOT NULL DEFAULT current_timestamp(),
-  `estado` tinyint(1) NOT NULL DEFAULT 0
+CREATE TABLE `afiliaciones` (
+  `id` int(20) NOT NULL,
+  `nombre` varchar(80) NOT NULL,
+  `cedula` varchar(20) NOT NULL,
+  `telefono` varchar(15) NOT NULL,
+  `ciudad` varchar(25) NOT NULL,
+  `email` varchar(50) NOT NULL,
+  `f_afiliacion` date NOT NULL,
+  `id_users` int(20) NOT NULL,
+  `created_At` timestamp NOT NULL DEFAULT current_timestamp(),
+  `updatedAt` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Volcado de datos para la tabla `usuarios`
+-- Volcado de datos para la tabla `afiliaciones`
 --
 
-INSERT INTO `usuarios` (`id`, `nombre`, `telefono`, `correo`, `usuario`, `contraseña`, `fecha_ingreso`, `estado`) VALUES
-(10, 'GRANERO EL PAISA', '3212691549', 'GRANEROELPAISA@gmail.com', 'admin', '123456', '2020-11-23 16:10:58', 0),
-(57, 'juan david', '547821', 'junadavid@gmail.com', 'juan', '123456', '2020-12-05 16:34:00', 1),
-(58, 'luis MIguel', '3124678', 'lumi@gmail.com', 'LUMI20', '123456', '2020-12-05 16:35:00', 1),
-(59, 'pedro', '5478217998', 'pedro@gmail.com', 'pedro', '123456', '2020-12-05 18:33:00', 1);
+INSERT INTO `afiliaciones` (`id`, `nombre`, `cedula`, `telefono`, `ciudad`, `email`, `f_afiliacion`, `id_users`, `created_At`, `updatedAt`) VALUES
+(1, 'santiago', '3104669501', '3218825708', 'Obando', 'santigp@gmail.com', '2021-01-15', 1, '2021-01-06 10:01:38', '2021-01-06 10:01:38'),
+(2, 'claudia', '29622897', '3104669501', 'Obando', 'claudilinda123@gmail.com', '2021-01-22', 1, '2021-01-06 10:03:16', '2021-01-06 10:03:16'),
+(5, 'santiago', '12345', '3104669501', 'Obando', 'Osodepeluche333@outlook.es', '2021-01-14', 2, '2021-01-06 18:49:48', '2021-01-06 18:49:48');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `users`
+--
+
+CREATE TABLE `users` (
+  `uid` int(11) NOT NULL,
+  `username` varchar(25) NOT NULL,
+  `password` varchar(200) NOT NULL,
+  `email` varchar(100) NOT NULL,
+  `created_At` timestamp NOT NULL DEFAULT current_timestamp(),
+  `updated_At` timestamp NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `users`
+--
+
+INSERT INTO `users` (`uid`, `username`, `password`, `email`, `created_At`, `updated_At`) VALUES
+(1, 'santigp258', 'e8eb3645182a31ff8494fc1005a31f61c6e31063e582d128c13f6b8ad35cf15a', 'santigp258@gmail.com', '2021-01-06 10:00:53', '2021-01-06 10:00:53'),
+(2, 'ana', 'e8eb3645182a31ff8494fc1005a31f61c6e31063e582d128c13f6b8ad35cf15a', 'ana@gmail.com', '2021-01-06 10:05:55', '2021-01-06 10:05:55');
 
 --
 -- Índices para tablas volcadas
 --
 
 --
--- Indices de la tabla `detallefactura`
+-- Indices de la tabla `afiliaciones`
 --
-ALTER TABLE `detallefactura`
+ALTER TABLE `afiliaciones`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `id_producto` (`id_producto`),
-  ADD KEY `id_venta` (`id_venta`);
+  ADD KEY `id_users` (`id_users`);
 
 --
--- Indices de la tabla `factura`
+-- Indices de la tabla `users`
 --
-ALTER TABLE `factura`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indices de la tabla `productos`
---
-ALTER TABLE `productos`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indices de la tabla `usuarios`
---
-ALTER TABLE `usuarios`
-  ADD PRIMARY KEY (`id`);
+ALTER TABLE `users`
+  ADD PRIMARY KEY (`uid`),
+  ADD UNIQUE KEY `username` (`username`);
 
 --
 -- AUTO_INCREMENT de las tablas volcadas
 --
 
 --
--- AUTO_INCREMENT de la tabla `detallefactura`
+-- AUTO_INCREMENT de la tabla `afiliaciones`
 --
-ALTER TABLE `detallefactura`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+ALTER TABLE `afiliaciones`
+  MODIFY `id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
--- AUTO_INCREMENT de la tabla `factura`
+-- AUTO_INCREMENT de la tabla `users`
 --
-ALTER TABLE `factura`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
-
---
--- AUTO_INCREMENT de la tabla `productos`
---
-ALTER TABLE `productos`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
-
---
--- AUTO_INCREMENT de la tabla `usuarios`
---
-ALTER TABLE `usuarios`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=60;
+ALTER TABLE `users`
+  MODIFY `uid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- Restricciones para tablas volcadas
 --
 
 --
--- Filtros para la tabla `detallefactura`
+-- Filtros para la tabla `afiliaciones`
 --
-ALTER TABLE `detallefactura`
-  ADD CONSTRAINT `detallefactura_ibfk_1` FOREIGN KEY (`id_producto`) REFERENCES `productos` (`id`) ON DELETE CASCADE,
-  ADD CONSTRAINT `detallefactura_ibfk_2` FOREIGN KEY (`id_venta`) REFERENCES `factura` (`id`) ON DELETE CASCADE;
+ALTER TABLE `afiliaciones`
+  ADD CONSTRAINT `afiliaciones_ibfk_1` FOREIGN KEY (`id_users`) REFERENCES `users` (`uid`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
