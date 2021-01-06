@@ -1,25 +1,10 @@
-<?php include('../includes/config.php'); 
-
+<?php include('../includes/config.php');
+include('./crud/crudClass.php');
 $uid = $_SESSION['uid'];
-if(isset($uid)){
-  $information = showByuserId($uid);
+if (isset($uid)) {
+  $crudClass = new crudClass();
+  $information = $crudClass->showUserBySessionId($uid);
 }
-
-function showByuserId($id) //uid/ dinamic index / total afilitions
-{
-  try {
-    $db = getDB();
-    $stmt = $db->prepare("SELECT * FROM users WHERE uid=:id");
-    $stmt->bindParam("id", $id, PDO::PARAM_INT);
-    $stmt->execute();
-    $data = $stmt->fetchAll(PDO::FETCH_OBJ); //User data
-    $db = null;
-    return $data;
-  } catch (PDOException $e) {
-    echo '{"error":{"text":' . $e->getMessage() . '}}';
-  }
-}
-
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -66,28 +51,27 @@ function showByuserId($id) //uid/ dinamic index / total afilitions
                   <!-- Nombre y cedula -->
                   <div class="form-row">
                     <div class="form-group col-md-6">
-                    <?php foreach($information as $info){ ?>
-                      <label for="usernamePro">Usuario</label>
-                      <input type="text" class="form-control" id="usernamePro" name="usernamePro" value="<?php echo $info->username ?>" disabled>
+                      <?php foreach ($information as $info) { ?>
+                        <label for="usernamePro">Usuario</label>
+                        <input type="text" class="form-control" id="usernamePro" name="usernamePro" value="<?php echo $info->username ?>" disabled>
                     </div>
                   </div>
                   <!-- Telefono Ciudad -->
                   <div class="form-row">
                     <div class="form-group col-md-6">
                       <label for="emailPro">Correo Electronico</label>
-                      <input type="email" class="form-control" id="emailPro"  name="emailPro" value="<?php echo $info->email ?>" disabled
-                        >
+                      <input type="email" class="form-control" id="emailPro" name="emailPro" value="<?php echo $info->email ?>" disabled>
                     </div>
                   </div>
                   <!-- Correo Afiliacion -->
                   <div class="form-row">
                     <div class="form-group col-md-6">
                       <label for="passwordPro">Contraseña</label>
-                      <input type="password" class="form-control" id="passwordPro"  name="passwordPro"> <i style="position: absolute; top: 36px; right: 12px; cursor:pointer" class="icon ion-ios-eye mr-2 lead show"></i><i style="position: absolute; top: 36px; right: 12px; cursor:pointer" class="icon ion-md-eye-off mr-2 lead hide"></i>
+                      <input type="password" class="form-control" id="passwordPro" name="passwordPro"> <i style="position: absolute; top: 36px; right: 12px; cursor:pointer" class="icon ion-ios-eye mr-2 lead show"></i><i style="position: absolute; top: 36px; right: 12px; cursor:pointer" class="icon ion-md-eye-off mr-2 lead hide"></i>
                     </div>
                   </div>
-                  <?php  }?>
-                <button type="submit" class="btn btn-primary mb-3" id="signupSubmit" >Actualizar</button>
+                <?php  } ?>
+                <button type="submit" class="btn btn-primary mb-3" id="signupSubmit">Actualizar</button>
                 <a href="administrator.php"><button type="button" class="btn btn-danger mb-3">Cancelar</button></a>
                 </form>
                 <!-- Botones Guardar y Cancelar -->
@@ -99,10 +83,10 @@ function showByuserId($id) //uid/ dinamic index / total afilitions
     </section>
     <!-- Fin de Formulario Perfil -->
   </div>
-<?php  include_once('../includes/footer.php') ?>
-<script src="<?php echo BASE_URL ?>plugin/validationsViews/updatedProfile.js"></script>
-<script src="<?php echo BASE_URL ?>plugin/toastr/toastr.min.js"></script>
-<script src="<?php echo BASE_URL ?>js/eyes.js"></script>
+  <?php include_once('../includes/footer.php') ?>
+  <script src="<?php echo BASE_URL ?>plugin/validationsViews/updatedProfile.js"></script>
+  <script src="<?php echo BASE_URL ?>plugin/toastr/toastr.min.js"></script>
+  <script src="<?php echo BASE_URL ?>js/eyes.js"></script>
 
 </body>
 

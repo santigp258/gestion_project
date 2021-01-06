@@ -1,9 +1,9 @@
 <?php include('../includes/config.php');
-  include('./searchClass.php');
+  include('./crud/crudClass.php');
 if (isset($_GET['id'])) {
-  $searchClass = new searchClass();
+  $crudClass = new crudClass();
   $id = $_GET['id'];
-  $information = $searchClass->showByid($id);
+  $information = $crudClass->showAfiByid($id);
 }
 ?>
 <!DOCTYPE html>
@@ -89,7 +89,7 @@ if (isset($_GET['id'])) {
                 </div>
                 <?php } ?>
                 <!-- Boton Regresar-->
-                <a href="administrator.php"><button type="submit" class="btn btn-danger mb-3">Atras</button></a>
+                <a href="administrator.php"><button type="button" class="btn btn-danger mb-3">Atras</button></a>
               </div>
             </div>
           </div>

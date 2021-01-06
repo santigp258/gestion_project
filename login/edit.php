@@ -1,4 +1,11 @@
-<?php include('../includes/config.php'); ?>
+<?php include('../includes/config.php');
+  include('./crud/crudClass.php');
+if (isset($_GET['id'])) {
+  $crudClass = new crudClass();
+  $id = $_GET['id'];
+  $information = $crudClass->showAfiByid($id);
+}
+?>
 <!DOCTYPE html>
 <html lang="es">
 
@@ -41,41 +48,43 @@
                 <form>
                   <!-- Nombre y cedula -->
                   <div class="form-row">
+                  <?php foreach($information as $info){ ?>
                     <div class="form-group col-md-6">
                       <label for="inputName4">Nombre</label>
-                      <input type="text" class="form-control" id="inputName4" placeholder="Nombre">
+                      <input type="text" class="form-control" id="inputName4" value="<?php echo $info->nombre ?>">
                     </div>
                     <div class="form-group col-md-6">
                       <label for="inputCedula4">Cedula</label>
-                      <input type="text" class="form-control" id="inputCedula4" placeholder="Cedula">
+                      <input type="text" class="form-control" id="inputCedula4" value="<?php echo $info->cedula ?>">
                     </div>
                   </div>
                   <!-- Telefono Ciudad -->
                   <div class="form-row">
                     <div class="form-group col-md-6">
                       <label for="inputTelefono4">Telefono</label>
-                      <input type="text" class="form-control" id="inputTelefono4" placeholder="Telefono">
+                      <input type="text" class="form-control" id="inputTelefono4" value="<?php echo $info->telefono ?>">
                     </div>
                     <div class="form-group col-md-6">
                       <label for="inputCiudad4">Ciudad</label>
-                      <input type="text" class="form-control" id="inputCiudad4" placeholder="Ciudad">
+                      <input type="text" class="form-control" id="inputCiudad4" value="<?php echo $info->ciudad ?>">
                     </div>
                   </div>
                   <!-- Correo Afiliacion -->
                   <div class="form-row">
                     <div class="form-group col-md-6">
                       <label for="inputCorreo4">Correo</label>
-                      <input type="email" class="form-control" id="inputCorreo4" placeholder="Correo">
+                      <input type="email" class="form-control" id="inputCorreo4" value="<?php echo $info->email ?>">
                     </div>
                     <div class="form-group col-md-6">
                       <label for="inputFecha4">Fecha de Afiliación</label>
-                      <input type="date" class="form-control" id="inputFecha4">
+                      <input type="date" class="form-control" id="inputFecha4"  value="<?php echo $info->f_afiliacion ?>">
                     </div>
                   </div>
-                </form>
+                  <?php } ?>
                 <!-- Botones Guardar y Cancelar -->
                 <button type="submit" class="btn btn-primary mb-3">Actualizar</button>
-                <a href="administrator.php"><button type="submit" class="btn btn-danger mb-3">Cancelar</button></a>
+                <a href="administrator.php"><button type="button" class="btn btn-danger mb-3">Cancelar</button></a>
+                </form>
               </div>
             </div>
           </div>
@@ -86,6 +95,6 @@
   </div>
 
 </body>
-<?php  include_once('../includes/footer.php') ?>
+<?php include_once('../includes/footer.php') ?>
 
 </html>

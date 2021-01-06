@@ -80,20 +80,4 @@ class searchClass
 
     } //end foreach
   } //en showInformation
-
-
-  public function showByid($id)
-  {
-    try {
-      $db = getDB();
-      $stmt = $db->prepare("SELECT * FROM afiliaciones WHERE id=:id");
-      $stmt->bindParam("id", $id, PDO::PARAM_INT);
-      $stmt->execute();
-      $data = $stmt->fetchAll(PDO::FETCH_OBJ); //User data
-      $db = null;
-      return $data;
-    } catch (PDOException $e) {
-      echo '{"error":{"text":' . $e->getMessage() . '}}';
-    }
-  }
 }
