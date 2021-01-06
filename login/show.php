@@ -1,23 +1,9 @@
 <?php include('../includes/config.php');
-
+  include('./searchClass.php');
 if (isset($_GET['id'])) {
+  $searchClass = new searchClass();
   $id = $_GET['id'];
-  $information = showByid($id);
-}
-
-function showByid($id) //uid/ dinamic index / total afilitions
-{
-  try {
-    $db = getDB();
-    $stmt = $db->prepare("SELECT * FROM afiliaciones WHERE id=:id");
-    $stmt->bindParam("id", $id, PDO::PARAM_INT);
-    $stmt->execute();
-    $data = $stmt->fetchAll(PDO::FETCH_OBJ); //User data
-    $db = null;
-    return $data;
-  } catch (PDOException $e) {
-    echo '{"error":{"text":' . $e->getMessage() . '}}';
-  }
+  $information = $searchClass->showByid($id);
 }
 ?>
 <!DOCTYPE html>
