@@ -45,7 +45,7 @@ if(!empty($_SESSION['uid'])){
         <label for="password">Contraseña</label>
         <input type="password" name="password" id="password" autocomplete="off">
         <!-- Boton Iniciar -->
-        <input type="submit" name="loginSubmit" value="Iniciar">
+        <input type="submit" name="loginSubmit" id="loginSubmit" value="Iniciar">
       </form>
       <!-- Text footer -->
       <span class="text-footer">¿Aún no te has registrado?<a

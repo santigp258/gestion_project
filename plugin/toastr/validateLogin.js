@@ -50,6 +50,7 @@ $(document).ready(function () {
         },
       }).done(function (resp) {
         if (resp === "done") {
+          $('#loginSubmit').attr("disabled", "disabled");
           var success =
             "<script src='" + baseURL + "plugin/toastr/infoLogin.js'></script>";
           $(document.body).append(success);
