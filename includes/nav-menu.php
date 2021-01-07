@@ -4,7 +4,7 @@ $userDetails = $userClass->userDetails($session_uid);
 ?>
 <!-- Barra de Navegacion -->
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand font-weight-bold" href="#">S.C.F DASHBOARD</a>
+  <a class="navbar-brand font-weight-bold" href="<?php echo BASE_URL ?>login/dashboard.php">S.C.F DASHBOARD</a>
   <div class="container">
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav ml-auto">
@@ -16,7 +16,7 @@ $userDetails = $userClass->userDetails($session_uid);
               <?php echo $userDetails->username ?>
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="profile.php">Mi Perfil</a>
+              <a class="dropdown-item" href="<?php echo BASE_URL ?>login/profile.php">Mi Perfil</a>
             </div>
           </li>
         </div>
@@ -37,9 +37,9 @@ $userDetails = $userClass->userDetails($session_uid);
       <h4>de Afiliaciónes </h4>
     </div>
     <div class="menu mt-5">
-      <a href="dashboard.php" class="d-block text-light p-3"><i class="icon ion-ios-home mr-2 lead"></i>
+      <a href="<?php echo BASE_URL ?>login/dashboard.php" class="d-block text-light p-3"><i class="icon ion-ios-home mr-2 lead"></i>
         Inicio</a>
-      <a href="administrator.php" class="d-block text-light p-3"><i class="icon ion-ios-people mr-2 lead"></i>
+      <a href="<?php echo BASE_URL ?>login/administrator.php" class="d-block text-light p-3"><i class="icon ion-ios-people mr-2 lead"></i>
         Administrar Afiliaciones</a>
       <a href="<?php echo BASE_URL ?>login/logout.php" class="d-block text-light p-3"><i
           class="icon ion-ios-log-out mr-2 lead"></i>
