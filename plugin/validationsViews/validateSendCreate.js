@@ -86,6 +86,7 @@ $(document).ready(function () {
           createAfiSubmit: " ",
         },
         success: function (response) {
+          console.log(response);
           if (response == "created") {
             $('#submitCreate').attr("disabled", "disabled");
             let title = "¡Afiliación creada!";
