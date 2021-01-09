@@ -12,7 +12,7 @@ if (!empty($_POST['createAfiSubmit'])) {
     $f_afiliacion = $_POST['fechaAfi'];
     $id_users =  $_SESSION['uid'];
     /* Regular expression check */
-    $nombre_check = preg_match('~^[A-Za-z0-9_]{3,20}$~i', $nombre);
+     $nombre_check = preg_match('~^[A-Za-z0-9_ ]{3,60}$~i', $nombre);
     if ($nombre_check) {
         $uid = $crudClass->createAffiliation($nombre, $cedula, $telefono, $ciudad, $email, $f_afiliacion, $id_users);
         echo 'created';

@@ -12,7 +12,7 @@ if (!empty($_POST['editAfiSubmit'])) {
     $f_afiliacion = $_POST['fechaAfi'];
     $id = $_GET['id'];
     /* Regular expression check */
-    $nombre_check = preg_match('~^[A-Za-z0-9_]{3,20}$~i', $nombre);
+    $nombre_check = preg_match('~^[A-Za-z0-9_ ]{3,60}$~i', $nombre);
     $cedula_check = preg_match('~^([0-9]){4,15}$~i', $cedula);
     $telefono_check = preg_match('~^([0-9]){8,15}$~i', $telefono);
     $ciudad_check = preg_match('~^[A-Za-z0-9_]{3,20}$~i', $ciudad);

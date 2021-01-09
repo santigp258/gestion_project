@@ -86,8 +86,7 @@ $(document).ready(function () {
           createAfiSubmit: " ",
         },
         success: function (response) {
-          console.log(response);
-          if (response == "created") {
+          if (response.trim() == "created") {
             $('#submitCreate').attr("disabled", "disabled");
             let title = "¡Afiliación creada!";
             toastr["success"](title);
@@ -95,10 +94,10 @@ $(document).ready(function () {
               closeButton: true,
               progressBar: true,
             };
+            setTimeout(()=>{
+               window.location.replace(baseURL + "login/administrator.php");
+            }, 2000);
           }
-         setTimeout(()=>{
-            window.location.replace(baseURL + "login/administrator.php");
-         }, 2000);
         },
       });
       return false;
