@@ -1,3 +1,3 @@
-# gestion_proyect
+# gestion_project
 
-Proyect in progress
+Project in progress
