@@ -1,6 +1,6 @@
  function deleting(){
         var form = $(".delete");
-        var baseURL = "http://localhost/gestion_proyect/";
+        var baseURL = "http://localhost/gestion_project/";
         var script = "<script src='" +
         baseURL +
         "plugin/bootbox/delete.js'></script>";

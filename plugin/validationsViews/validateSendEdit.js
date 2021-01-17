@@ -1,6 +1,6 @@
 $(document).ready(function () {
     //Change important
-    var baseURL = "http://localhost/gestion_proyect/";
+    var baseURL = "http://localhost/gestion_project/";
     var inputObj = $("#formEdit input");
     $("#formEdit").submit(function (e) {
       e.preventDefault();

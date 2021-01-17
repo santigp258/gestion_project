@@ -1,4 +1,4 @@
-ErrorDocument 404 http://localhost/gestion_proyect/404.php
+ErrorDocument 404 http://localhost/gestion_project/404.php
 
 Options All -Indexes
 

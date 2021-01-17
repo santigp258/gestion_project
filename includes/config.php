@@ -5,7 +5,7 @@ define('DB_SERVER', 'localhost');
 define('DB_USERNAME', 'root');
 define('DB_PASSWORD', '');
 define('DB_DATABASE', 'gestion');
-define("BASE_URL", "http://localhost/gestion_proyect/"); // Eg. http://yourwebsite.com
+define("BASE_URL", "http://localhost/gestion_project/"); // Eg. http://yourwebsite.com
 
 
 function getDB()
